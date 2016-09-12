@@ -1,0 +1,107 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 18, 2016, 3:13:02 PM
+    Author     : AkbarHirani
+*/
+
+/* Import fonts */
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+@import url("hoverex-all.css") screen;
+
+.darkBG {
+    background: #999;
+}
+.darkerBG {
+    background: #666;
+}
+.darkestBG {
+    background: #333;
+}
+.centered {text-align: center}
+.right {text-align: right}
+.mt {margin-top: 50px;}
+.mb {margin-bottom: 50px;}
+.mtb {margin-top: 50px; margin-bottom: 50px;}
+.mtb2 { margin-top: 100px; margin-bottom: 100px;}
+.ptb {padding-top: 80px; padding-bottom: 80px;}
+p { 
+	padding: 0; 
+	margin-bottom: 12px; 
+    font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 18px; 
+	line-height: 28px;
+	color: #666; 
+	margin-top: 10px; 
+}
+html,
+body {
+	height: 100%;
+}
+a { 
+	padding: 0;
+	margin: 0;
+	text-decoration: none; 
+	-webkit-transition: background-color .4s linear, color .4s linear;
+	-moz-transition: background-color .4s linear, color .4s linear;
+	-o-transition: background-color .4s linear, color .4s linear;
+	-ms-transition: background-color .4s linear, color .4s linear;
+	transition: background-color .4s linear, color .4s linear;
+	color: #1abc9c;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  color:#696E74;
+}
+
+#sep {
+	background: url(assets/imgs/sep.jpg) no-repeat center top;
+	padding-top: 100px;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 450px;
+	width: 100%;
+	color: white;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+#sep h3 {
+	font-weight: 300;
+	letter-spacing: 2px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+#h h3 {
+	margin-top: 10px;
+}
+#h2 h3 {
+	margin-top: 30px;
+	letter-spacing: 1px;
+}
+.tpl6 h3
+{
+	color:#fff;
+	margin:0;
+	padding:40px 5px 0;
+	font-size:16px;
+	text-transform:uppercase;
+}
