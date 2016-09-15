@@ -38,3 +38,7 @@ a.none:hover {
 	text-decoration: none;
 	font-size: 14px;
 }
+
+.indent {
+	padding: 0 5%;
+}
