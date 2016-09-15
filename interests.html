@@ -34,61 +34,100 @@
     </head>
     
     <body>
-    	<header>
+        <header class="navbar-inverse">
+            <div class="container">
+                <nav rol="navigation">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Akbar Hirani</a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+                                <li><a target="_blank" href="https://github.com/AkbarHirani123/">GitHub</a></li>
+                                <li><a target="_blank" href="https://www.linkedin.com/in/akbarhirani123/">LinkedIn</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/skills.html">Skills & Tool Set</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="/work.html">Work Experience</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="/service.html">Voluntary Experience</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="/interests.html">Interests</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </div>
+        </header>
+        <div class="container">
             <h1>Javascript Cool events:</h1>
             <h2>Javascript event 1: Simple addition</h2>
-        </header>
-        <div class="center">             
-            <h4>Add Numbers:</h4>
-            <p>
-                <input id="num-one"> + <input id="num-two">
-            </p>
-            <p id="add-sum" class="fancy">Enter number(s) above.</p>
-        </div>
+            <div class="center">             
+                <h4>Add Numbers:</h4>
+                <p>
+                    <input id="num-one"> + <input id="num-two">
+                </p>
+                <p id="add-sum" class="fancy">Enter number(s) above.</p>
+            </div>
 
-        <h2>Javascript event 2: Picture display</h2>
-        <div class="container ptd">
-            <div class="row">
-                <div class="col-md-6">
-                    <ul >
-                        <li> <a class="none" data-img="bird-pic" id="bird" src="#"> Bird </a></li>
-                        <li> <a class="none" data-img="dog-pic" id="dog" src="#"> Dog </a></li>
-                        <li> <a class="none" data-img="fish-pic" id="fish" src="#"> Fish </a></li>
-                    </ul>
-                </div>
+            <h2>Javascript event 2: Picture display</h2>
+            <div class="container ptd">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul >
+                            <li> <a class="none" data-img="bird-pic" id="bird" src="#"> Bird </a></li>
+                            <li> <a class="none" data-img="dog-pic" id="dog" src="#"> Dog </a></li>
+                            <li> <a class="none" data-img="fish-pic" id="fish" src="#"> Fish </a></li>
+                        </ul>
+                    </div>
 
-                <div class="col-md-6">
-                    <img class="hide" id="bird-pic" src="http://images.50statesproject.com/birds/mt_bird.jpg">
-                    <img class="hide" id="dog-pic" src="http://sharethejoyphotography.com/files/seo-galleries/gallery-961/thumbs/Burnese-Mountain-Dog-Puppy-9-200x200.jpg">
-                    <img class="hide" id="fish-pic" src="http://www.bluewateraquarium.in/wp-content/uploads/2015/09/Marine-Aquarium-Fish-200x200.jpg">
+                    <div class="col-md-6">
+                        <img class="hide" id="bird-pic" src="http://images.50statesproject.com/birds/mt_bird.jpg">
+                        <img class="hide" id="dog-pic" src="http://sharethejoyphotography.com/files/seo-galleries/gallery-961/thumbs/Burnese-Mountain-Dog-Puppy-9-200x200.jpg">
+                        <img class="hide" id="fish-pic" src="http://www.bluewateraquarium.in/wp-content/uploads/2015/09/Marine-Aquarium-Fish-200x200.jpg">
+                    </div>
                 </div>
             </div>
-        </div>
 
-                    
-        <h2>Javascript event 3: Edit live</h2>
-        
-        <div class="container ptd">
-            <div class="row">
-                <div class="col-md-6">
-                    <ul id="checklist">
-                        <li>
-                            <span>Apples</span>
-                            <input value="Apples" />
-                        </li>
-                        <li>
-                            <span>Oranges</span>
-                            <input value="Oranges" />
-                        </li>
-                        <li>
-                            <span>Bananas</span>
-                            <input value="Bananas" />
-                        </li>
-                    </ul>
+                        
+            <h2>Javascript event 3: Edit live</h2>
+            
+            <div class="container ptd">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul id="checklist">
+                            <li>
+                                <span>Apples</span>
+                                <input value="Apples" />
+                            </li>
+                            <li>
+                                <span>Oranges</span>
+                                <input value="Oranges" />
+                            </li>
+                            <li>
+                                <span>Bananas</span>
+                                <input value="Bananas" />
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
 
         <!-- JS scripts-->
         <script src="events.js"></script>
