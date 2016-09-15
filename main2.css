@@ -1,7 +1,8 @@
+
 body {
 	font-family: "helvetica neue";
 	color: #666;
-	padding: 0 20%;
+	padding: 0 5%;
 }
 
 li input{
@@ -14,4 +15,27 @@ li.edit span {
 
 li.edit input {
 	display: initial;
+}
+p.fancy {
+	background-color: #ECECEC;
+}
+
+div.center {
+	text-align: center;
+}
+
+.hide {
+	display: none;
+	position: absolute;
+}
+
+.special {
+	position: absolute;
+}
+
+a.none,
+a.none:hover {
+	color: #333;
+	text-decoration: none;
+	font-size: 14px;
 }
