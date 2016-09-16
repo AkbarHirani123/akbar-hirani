@@ -42,3 +42,19 @@ a.none:hover {
 .indent {
 	padding: 0 5%;
 }
+
+h1.h123 {
+	font-size: 50px;
+}
+
+div.jumbotron2 {
+	padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
+    display: block;
+    text-align: center;
+
+}
