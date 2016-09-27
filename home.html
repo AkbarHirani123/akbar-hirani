@@ -103,17 +103,60 @@ and open the template in the editor.
           			<div class="col-md-8 col-md-offset-2">
             			<h1>I live in New York City</h1>
             			<h3 class="mb">For questions, comments,<br/>and concers, please send me a message using the button below.</h3>
-            			<button class="btn btn-conf btn-clear">Send Message</button>
+            			<button class="btn btn-inverse" data-toggle="modal" data-target="#contactme">Contact Me</button>
           			</div>
         		</div><!--/row-->
      		</div><!--/container-->
     	</div><!--/.sep-->
-   
+
+        <!-- Modal Contact me -->
+        <div class="modal fade" id="contactme" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class = "modal-header">
+                        <p><strong>Contact Me</strong></p>
+                    </div>
+                    <form id="loginForm" method="post" class="form-horizontal">
+                        <div class = "modal-body">
+                            <div class="form-group">
+                                <label for="contact-name" class="col-lg-2 control-label">Name:</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="contactName" placeholder="Enter Full Name" autofocus required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "modal-body">
+                            <div class="form-group">
+                                <label for="contact-email" class="col-lg-2 control-label">Email:</label>
+                                <div class="col-lg-10">
+                                    <input type="email" class="form-control" id="contactEmail" placeholder="you@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "modal-body">
+                            <div class="form-group">
+                                <label for="contact-message" class="col-lg-2 control-label">Message:</label>
+                                <div class="col-lg-10">
+                                    <textarea class="form-control" rows="8" id="contactMessage" placeholder="Enter Message" required></textarea> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button class="btn btn-inverse" type="submit">Send!</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>        
+        <script src="jquery-events.js"></script>
+
         
         <!-- Latest compiled and minified JavaScript -->        
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
