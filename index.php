@@ -1,19 +1,24 @@
 <?php
 // If you are using Composer
-require __DIR__ . '/vendor/autoload.php';
-//include(dirname(__DIR__) . '/lib/Client.php');
-try {
-    $apiKey = getenv('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');
-    $headers = ['Authorization: Basic ' . $apiKey];
-    //$global_headers = array(Authorization: Bearer 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);
+require 'vendor/autoload.php';
 
-    $global_headers = array('Authorization: Basic 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');
-    $client = SendGrid\Client('https://api.sendgrid.com/v3/api_keys', $global_headers);
+try{
+    $from = new SendGrid\Email(null, "test@example.com");
+    $subject = "Hello World from the SendGrid PHP Library!";
+    $to = new SendGrid\Email(null, "test@example.com");
+    $content = new SendGrid\Content("text/plain", "Hello, Email!");
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
+    $apiKey = getenv('SENDGRID_API_KEY');
+    $sg = new \SendGrid($apiKey);
+
+    $response = $sg->client->mail()->send()->post($mail);
+    echo $response->statusCode();
+    echo $response->headers();
+    echo $response->body();
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
-echo 'Hello World';
 
 /*
 // GET Collection
