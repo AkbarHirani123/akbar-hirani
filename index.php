@@ -12,7 +12,7 @@ $headers = array(
     'Content-Type: application/json',
     'Authorization: Bearer '.$api_key
 );
-$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3/scopes');
+$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3/user/profile');
 
 // GET Collection
 $query_params = array('limit' => 100, 'offset' => 0);
@@ -22,18 +22,6 @@ echo $response->statusCode();
 echo $response->body();
 echo $response->headers();
 
-$request_body = array(
-        'name' => 'Sending email through heroku',
-        'scopes' => array(
-            'mail.send',
-            'alerts.create',
-            'alerts.read'
-        )
-);
-$response = $client->api_keys()->post($request_body);
-echo $response->statusCode();
-echo $response->body();
-echo $response->headers();
 ?> 
 
 <p>Next stuff</p>
