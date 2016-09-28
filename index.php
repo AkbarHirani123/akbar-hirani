@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 
 try{
     $apiKey = getenv('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');
+    $sg = new \SendGrid($apiKey);
     
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
