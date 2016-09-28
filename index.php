@@ -24,6 +24,39 @@ echo $response->statusCode();
 echo $response->body();
 echo $response->headers();
 
+$request_body = json_decode('{
+  "personalizations": [
+    {
+      "to": [
+        {
+          "email": "test@example.com"
+        }
+      ],
+      "subject": "Hello World from the SendGrid PHP Library!"
+    }
+  ],
+  "from": {
+    "email": "test@example.com"
+  },
+  "content": [
+    {
+      "type": "text/plain",
+      "value": "Hello, Email!"
+    }
+  ]
+}');
+?> 
+
+<p>Next stuff</p>
+
+<?php
+$sg = new \SendGrid($apiKey);
+
+$response = $sg->client->mail()->send()->post($request_body);
+echo $response->statusCode();
+echo $response->body();
+echo $response->headers();
+
 /*
 THIS WORKS!!!!!!!!!!!!!!
 require __DIR__ . '/vendor/autoload.php';
