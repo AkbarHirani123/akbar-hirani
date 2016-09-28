@@ -2,7 +2,7 @@
 // If you are using Composer
 //require 'vendor/autoload.php';
 
-function helloEmail()
+/*function helloEmail()
 {
     $from = new Email(null, "test@example.com");
     $subject = "Hello World from the SendGrid PHP Library";
@@ -26,7 +26,7 @@ function sendHelloEmail()
     echo $response->headers();
 }
 
-sendHelloEmail(); 
+sendHelloEmail(); */
 ?>
 <!DOCTYPE html>
 <!--
