@@ -7,12 +7,9 @@ try {
     $headers = ['Authorization: Basic ' . $apiKey];
     //$global_headers = array(Authorization: Bearer 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);
 
-    $client = SendGrid\Client('https://api.sendgrid.com/v3/api_keys', $headers);
+    $global_headers = array('Authorization: Basic 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');
+    $client = SendGrid\Client('https://api.sendgrid.com/v3/api_keys', $global_headers);
 
-    $response = $client->your()->api()->_($param)->call()->get();
-    print $response->statusCode();
-    print $response->headers();
-    print $response->body();
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
