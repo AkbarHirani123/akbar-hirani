@@ -15,7 +15,7 @@ function helloEmail()
     //echo json_encode($mail, JSON_PRETTY_PRINT), "\n";
     return $mail;
 }
-/*
+
 try{
     $apiKey = getenv('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');
     $sg = new \SendGrid($apiKey);
@@ -30,7 +30,7 @@ try{
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
 
-
+/*
 // GET Collection
 $query_params = ['limit' => 100, 'offset' => 0];
 $request_headers = ['X-Mock: 200'];
