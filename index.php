@@ -3,7 +3,7 @@
 require __DIR__ . '/vendor/autoload.php';
 //include(dirname(__DIR__) . '/lib/Client.php');
 $path_to_config = dirname(__DIR__);
-$apiKey = getenv('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');
+$apiKey = getenv('sEvCEJDPS-GXagGqzACgvg');
 $headers = ['Authorization: Bearer ' . $apiKey];
 //$global_headers = array(Authorization: Bearer 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);
 $client = SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
