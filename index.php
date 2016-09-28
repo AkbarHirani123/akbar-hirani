@@ -6,11 +6,28 @@ require __DIR__ . '/vendor/autoload.php';
 
 
 try{
-    $from = new SendGrid\Email(null, "test@example.com");
-    /*$subject = "Hello World from the SendGrid PHP Library!";
-    $to = new SendGrid\Email(null, "test@example.com");
-    $content = new SendGrid\Content("text/plain", "Hello, Email!");
-    $mail = new SendGrid\Mail($from, $subject, $to, $content);
+    $request_body = json_decode('{
+      "personalizations": [
+        {
+          "to": [
+            {
+              "email": "test@example.com"
+            }
+          ],
+          "subject": "Hello World from the SendGrid PHP Library!"
+        }
+      ],
+      "from": {
+        "email": "test@example.com"
+      },
+      "content": [
+        {
+          "type": "text/plain",
+          "value": "Hello, Email!"
+        }
+      ]
+    }');
+    /*
     $apiKey = getenv('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');
     $sg = new \SendGrid($apiKey);
 
