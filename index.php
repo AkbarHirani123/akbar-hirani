@@ -1,10 +1,21 @@
 <?php
 // If you are using Composer
-require __DIR__ . '/vendor/autoload.php';
+//require __DIR__ . '/vendor/autoload.php';
+include(dirname(__DIR__) . '/lib/Client.php');
+$apiKey = getenv('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');
+$headers = ['Authorization: Bearer ' . $apiKey];
+//$global_headers = array(Authorization: Bearer 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);
+$client = SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
 
-/*$global_headers = array(Authorization: Basic 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);
-$client = SendGrid\Client('base_url', 'global_headers');
-$response = $client->your()->api()->_($param)->call()->get();
+// GET Collection
+$query_params = ['limit' => 100, 'offset' => 0];
+$request_headers = ['X-Mock: 200'];
+$response = $client->api_keys()->get(null, $query_params, $request_headers);
+echo $response->statusCode();
+echo $response->body();
+echo $response->headers();
+
+/*$response = $client->your()->api()->_($param)->call()->get();
 print $response->statusCode();
 print $response->headers();
 print $response->body();
