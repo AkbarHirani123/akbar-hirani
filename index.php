@@ -2,8 +2,15 @@
 namespace SendGrid;
 // If you are using Composer
 require __DIR__ . '/vendor/autoload.php';
+/*
+spl_autoload_register(function ($class) {
+    $file = __DIR__ . '/vendor/' . strtr($class, '\\', '/') . '.php';
+    if (file_exists($file)) {
+        require $file;
 
-
+        return true;
+    }
+});
 
 try{
     $request_body = json_decode('{
@@ -27,10 +34,10 @@ try{
         }
       ]
     }');
-    
+
     $apiKey = getenv('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');
-    $sg = new \SendGrid($apiKey);
-/*
+    $sg = new SendGrid($apiKey);
+
     
     $response = $sg->client->mail()->send()->post($request_body);
     echo $response->statusCode();
