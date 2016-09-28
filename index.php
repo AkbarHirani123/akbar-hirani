@@ -21,8 +21,8 @@ $query_params = array('limit' => 100, 'offset' => 0);
 $request_headers = array('X-Mock: 200');
 $response = $client->api_keys()->get(null, $query_params, $request_headers);
 echo $response->statusCode();
-echo $response->responseBody();
-echo $response->responseHeaders();
+echo $response->body();
+echo $response->headers();
 
 /*
 THIS WORKS!!!!!!!!!!!!!!
