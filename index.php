@@ -5,7 +5,6 @@ include(dirname(__DIR__) . '/lib/Client.php');
 
 // This gets the parent directory, for your current directory use getcwd()
 $path_to_config = dirname(__DIR__);
-namespace SendGrid;
 
 $api_key = getenv('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');
 $headers = array(
@@ -26,27 +25,18 @@ echo $response->statusCode();
 echo $response->body();
 echo $response->headers();
 
-$request_body = json_decode('{
-  "personalizations": [
-    {
-      "to": [
-        {
-          "email": "test@example.com"
-        }
-      ],
-      "subject": "Hello World from the SendGrid PHP Library!"
-    }
-  ],
-  "from": {
-    "email": "test@example.com"
-  },
-  "content": [
-    {
-      "type": "text/plain",
-      "value": "Hello, Email!"
-    }
-  ]
-}');
+$request_body = array(
+        'name' => 'Sending email through heroku',
+        'scopes' => array(
+            'mail.send',
+            'alerts.create',
+            'alerts.read'
+        )
+);
+$response = $client->api_keys()->post($request_body);
+echo $response->statusCode();
+echo $response->body();
+echo $response->headers();
 ?> 
 
 <p>Next stuff</p>
