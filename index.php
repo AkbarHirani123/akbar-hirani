@@ -50,13 +50,17 @@ $request_body = json_decode('{
 <p>Next stuff</p>
 
 <?php
-$sg = new \SendGrid($apiKey);
 
-$response = $sg->client->mail()->send()->post($request_body);
-echo $response->statusCode();
-echo $response->body();
-echo $response->headers();
+try{
+    $sg = new \SendGrid($apiKey);
 
+    $response = $sg->client->mail()->send()->post($request_body);
+    echo $response->statusCode();
+    echo $response->body();
+    echo $response->headers();
+} catch(Exception $e){
+    echo 'Caught Exception', $e->getMessage();
+}
 /*
 THIS WORKS!!!!!!!!!!!!!!
 require __DIR__ . '/vendor/autoload.php';
