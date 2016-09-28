@@ -3,7 +3,7 @@
 require 'vendor/autoload.php';
 
 try{
-    $apiKey = getenv('SENDGRID_API_KEY');
+    $apiKey = getenv('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');
     $sg = new \SendGrid($apiKey);
 
     $response = $sg->client->suppressions()->bounces()->get();
