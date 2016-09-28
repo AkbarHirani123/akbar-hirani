@@ -9,9 +9,10 @@ $path_to_config = dirname(__DIR__);
 $api_key = getenv('sEvCEJDPS-GXagGqzACgvg');
 
 $headers = array(
-    ''.$api_key
+    'Content-Type: application/json',
+    'Authorization: Bearer '.$api_key
 );
-$client = new SendGrid\Client('https://api.sendgrid.comv3/api_keys/', $headers);
+$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
 
 // GET Collection
 $query_params = array('limit' => 100, 'offset' => 0);
@@ -40,7 +41,7 @@ echo $response->headers();
 <?php
 
 try{
-    $sg = new \SendGrid($apiKey);
+    //$sg = new \SendGrid($apiKey);
 
     /*$response = $sg->client->mail()->send()->post($request_body);
     echo $response->statusCode();
