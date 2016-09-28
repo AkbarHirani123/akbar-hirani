@@ -17,14 +17,15 @@ function helloEmail()
 }
 
 try{
-    $apiKey = getenv('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');
+    $request_body = helloEmail();
+    /*$apiKey = getenv('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');
     $sg = new \SendGrid($apiKey);
 
-    $request_body = helloEmail();
+    
     $response = $sg->client->mail()->send()->post($request_body);
     echo $response->statusCode();
     echo $response->body();
-    echo $response->headers();
+    echo $response->headers();*/
     
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
