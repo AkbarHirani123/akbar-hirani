@@ -3,7 +3,7 @@ namespace SendGrid;
 // If you are using Composer
 require __DIR__ . '/vendor/autoload.php';
 
-print "Key=" . SENDGRID_API_KEY.value;
+print "Key=" . 'SENDGRID_API_KEY';
 /*
 try{
     $request_body = json_decode('{
