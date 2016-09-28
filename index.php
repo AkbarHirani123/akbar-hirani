@@ -12,7 +12,7 @@ $headers = array(
     'Content-Type: application/json',
     'Authorization: Bearer '.$api_key
 );
-$client = new SendGrid\Client('GET https://api.sendgrid.com', $headers, '/v3');
+$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
 
 // GET Collection
 $query_params = array('limit' => 100, 'offset' => 0);
@@ -40,16 +40,13 @@ echo $response->headers();
 
 <?php
 
-try{
-    //$sg = new \SendGrid($apiKey);
+// GET Single
+$response = $client->version('/v3')->api_keys()->_($api_key_id)->get();
+echo $response->statusCode();
+echo $response->body();
+echo $response->headers();
 
-    /*$response = $sg->client->mail()->send()->post($request_body);
-    echo $response->statusCode();
-    echo $response->body();
-    echo $response->headers();*/
-} catch(Exception $e){
-    echo 'Caught Exception', $e->getMessage();
-}
+
 /*
 THIS WORKS!!!!!!!!!!!!!!
 require __DIR__ . '/vendor/autoload.php';
