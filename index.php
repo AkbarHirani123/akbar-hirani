@@ -42,7 +42,7 @@ try{
     $response = $sg->client->mail()->send()->post($request_body);
     echo $response->statusCode();
     echo $response->body();
-    echo $response->headers();*/
+    echo $response->headers();
     
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
