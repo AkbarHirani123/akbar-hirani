@@ -3,35 +3,14 @@
 require 'vendor/autoload.php';
 
 try{
-    $request_body = json_decode('{
-      "personalizations": [
-        {
-          "to": [
-            {
-              "email": "test@example.com"
-            }
-          ],
-          "subject": "Hello World from the SendGrid PHP Library!"
-        }
-      ],
-      "from": {
-        "email": "test@example.com"
-      },
-      "content": [
-        {
-          "type": "text/plain",
-          "value": "Hello, Email!"
-        }
-      ]
-    }');
-
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
 
-    $response = $sg->client->mail()->send()->post($request_body);
-    echo $response->statusCode();
-    echo $response->body();
-    echo $response->headers();
+    $response = $sg->client->suppressions()->bounces()->get();
+
+    print $response->statusCode();
+    print $response->headers();
+    print $response->body();
 } catch (Exception $e) {
     echo 'Caught exception: ',  $e->getMessage(), "\n";
 }
