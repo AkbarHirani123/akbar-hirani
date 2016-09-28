@@ -10,7 +10,7 @@ $apiKey = getenv('SG.sEvCEJDPS-GXagGqzACgvg.EYzD8w_pO2BJ6wpHbAcuG7wfNJiTQrSvapcE
 
 $headers = array(
     'Content-Type: application/json',
-    'Authorization: Bearer '.$api_key
+    ''.$api_key
 );
 $client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3/user/profile');
 
