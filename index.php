@@ -12,7 +12,7 @@ $headers = array(
     'Content-Type: application/json',
     'Authorization: Bearer '.$api_key
 );
-$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
+$client = new SendGrid\Client('GET https://api.sendgrid.com', $headers, '/v3');
 
 // GET Collection
 $query_params = array('limit' => 100, 'offset' => 0);
