@@ -54,10 +54,10 @@ $request_body = json_decode('{
 try{
     $sg = new \SendGrid($apiKey);
 
-    $response = $sg->client->mail()->send()->post($request_body);
+    /*$response = $sg->client->mail()->send()->post($request_body);
     echo $response->statusCode();
     echo $response->body();
-    echo $response->headers();
+    echo $response->headers();*/
 } catch(Exception $e){
     echo 'Caught Exception', $e->getMessage();
 }
