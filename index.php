@@ -2,14 +2,20 @@
 // If you are using Composer
 require __DIR__ . '/vendor/autoload.php';
 //include(dirname(__DIR__) . '/lib/Client.php');
-$path_to_config = dirname(__DIR__);
-$apiKey = getenv('sEvCEJDPS-GXagGqzACgvg');
-$headers = ['Authorization: Bearer ' . $apiKey];
-//$global_headers = array(Authorization: Bearer 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);
 try {
+    $path_to_config = dirname(__DIR__);
+    $apiKey = getenv('sEvCEJDPS-GXagGqzACgvg');
+    $headers = ['Authorization: Bearer ' . $apiKey];
+    //$global_headers = array(Authorization: Bearer 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);
+
     $client = SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
 } catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
+    echo json_encode(array(
+        'error' => array(
+            'msg' => $e->getMessage(),
+            'code' => $e->getCode(),
+        ),
+    ));
 }
 echo 'Hello World';
 
