@@ -1,8 +1,16 @@
 <?php
 // If you are using Composer
+require __DIR__ . '/vendor/autoload.php';
 require 'vendor/autoload.php';
 
-function helloEmail()
+$global_headers = array(Authorization: Basic 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);
+$client = SendGrid\Client('base_url', 'global_headers');
+$response = $client->your()->api()->_($param)->call()->get();
+print $response->statusCode();
+print $response->headers();
+print $response->body();
+
+/*function helloEmail()
 {
     $from = new Email(null, "test@example.com");
     $subject = "Hello World from the SendGrid PHP Library";
@@ -17,7 +25,7 @@ function helloEmail()
 
 function sendHelloEmail()
 {
-    $apiKey = getenv('sEvCEJDPS-GXagGqzACgvg');
+    $apiKey = getenv('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');
     $sg = new \SendGrid($apiKey);
     $request_body = helloEmail();
     $response = $sg->client->mail()->send()->post($request_body);
@@ -26,7 +34,7 @@ function sendHelloEmail()
     echo $response->headers();
 }
 
-sendHelloEmail(); 
+sendHelloEmail(); */
 ?>
 <!DOCTYPE html>
 <!--
@@ -36,7 +44,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-    	
+        
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
         <!-- Latest compiled and minified CSS -->
@@ -45,30 +53,30 @@ and open the template in the editor.
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-		
+        
         <!-- ****** faviconit.com favicons ****** -->
-		<link rel="shortcut icon" href="assets/imgs/favicon.ico">
-		<link rel="icon" sizes="16x16 32x32 64x64" href="assets/imgs/favicon.ico">
-		<link rel="icon" type="image/png" sizes="196x196" href="assets/imgs/favicon-192.png">
-		<link rel="icon" type="image/png" sizes="160x160" href="assets/imgs/favicon-160.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="assets/imgs/favicon-96.png">
-		<link rel="icon" type="image/png" sizes="64x64" href="assets/imgs/favicon-64.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="assets/imgs/favicon-32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="assets/imgs/favicon-16.png">
-		<link rel="apple-touch-icon" href="assets/imgs/favicon-57.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="assets/imgs/favicon-114.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="assets/imgs/favicon-72.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="assets/imgs/favicon-144.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="assets/imgs/favicon-60.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="assets/imgs/favicon-120.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="assets/imgs/favicon-76.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="assets/imgs/favicon-152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="assets/imgs/favicon-180.png">
-		<meta name="msapplication-TileColor" content="#FFFFFF">
-		<meta name="msapplication-TileImage" content="assets/imgs/favicon-144.png">
-		<meta name="msapplication-config" content="assets/imgs/browserconfig.xml">
-		<!-- ****** faviconit.com favicons ****** -->
-		
+        <link rel="shortcut icon" href="assets/imgs/favicon.ico">
+        <link rel="icon" sizes="16x16 32x32 64x64" href="assets/imgs/favicon.ico">
+        <link rel="icon" type="image/png" sizes="196x196" href="assets/imgs/favicon-192.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="assets/imgs/favicon-160.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="assets/imgs/favicon-96.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="assets/imgs/favicon-64.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/imgs/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/imgs/favicon-16.png">
+        <link rel="apple-touch-icon" href="assets/imgs/favicon-57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/imgs/favicon-114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/imgs/favicon-72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="assets/imgs/favicon-144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="assets/imgs/favicon-60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="assets/imgs/favicon-120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="assets/imgs/favicon-76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="assets/imgs/favicon-152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/imgs/favicon-180.png">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="assets/imgs/favicon-144.png">
+        <meta name="msapplication-config" content="assets/imgs/browserconfig.xml">
+        <!-- ****** faviconit.com favicons ****** -->
+        
         <title>Akbar Hirani | Software Developer And A Thinker</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -116,28 +124,28 @@ and open the template in the editor.
         </header>
         
         <div class="container ptb">
-      		<div class="row">
-        		<h2 class="centered mb">I craft handsome sites & stunning apps<br/>that empower your brand.</h2>
-       	 		<div class="col-md-6">
-          			<p>I am a New York based web deveopler that works on both object-oriented web deveoplment using Java Spring and modern scripting languages and practices such as PHP, HTML, CSS, and CMS such as WordPress.</p>
-       			</div><!--/col-md-6-->
-        		<div class="col-md-6">
-          			<p>To look at my detailed work, please check out the work experience section in the navigation bar above. I have listed all my projects and my work history there. My Voluntary services show great deal about my leadership and team working skills.</p>
-        		</div><!--/col-md-6-->
-      		</div><!--/row-->
-    	</div><!-- /.container -->
-    	
-		<div id="sep">
-      		<div class="container">
-        		<div class="row centered">
-          			<div class="col-md-8 col-md-offset-2">
-            			<h1>I live in New York City</h1>
-            			<h3 class="mb">For questions, comments,<br/>and concers, please send me a message using the button below.</h3>
-            			<button class="btn btn-inverse" data-toggle="modal" data-target="#contactme">Contact Me</button>
-          			</div>
-        		</div><!--/row-->
-     		</div><!--/container-->
-    	</div><!--/.sep-->
+            <div class="row">
+                <h2 class="centered mb">I craft handsome sites & stunning apps<br/>that empower your brand.</h2>
+                <div class="col-md-6">
+                    <p>I am a New York based web deveopler that works on both object-oriented web deveoplment using Java Spring and modern scripting languages and practices such as PHP, HTML, CSS, and CMS such as WordPress.</p>
+                </div><!--/col-md-6-->
+                <div class="col-md-6">
+                    <p>To look at my detailed work, please check out the work experience section in the navigation bar above. I have listed all my projects and my work history there. My Voluntary services show great deal about my leadership and team working skills.</p>
+                </div><!--/col-md-6-->
+            </div><!--/row-->
+        </div><!-- /.container -->
+        
+        <div id="sep">
+            <div class="container">
+                <div class="row centered">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1>I live in New York City</h1>
+                        <h3 class="mb">For questions, comments,<br/>and concers, please send me a message using the button below.</h3>
+                        <button class="btn btn-inverse" data-toggle="modal" data-target="#contactme">Contact Me</button>
+                    </div>
+                </div><!--/row-->
+            </div><!--/container-->
+        </div><!--/.sep-->
 
         <!-- Modal Contact me -->
         <div class="modal fade" id="contactme" role="dialog">
