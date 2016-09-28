@@ -15,7 +15,7 @@ $headers = array(
     'Content-Type: application/json',
     'Authorization: Bearer '.$api_key
 );
-$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
+$client = new SendGrid\Client('https://api.sendgrid.comv3/api_keys/', $headers);
 
 // GET Collection
 $query_params = array('limit' => 100, 'offset' => 0);
