@@ -6,7 +6,13 @@ $path_to_config = dirname(__DIR__);
 $apiKey = getenv('sEvCEJDPS-GXagGqzACgvg');
 $headers = ['Authorization: Bearer ' . $apiKey];
 //$global_headers = array(Authorization: Bearer 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);
-$client = SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
+try {
+    $client = SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
+} catch (Exception $e) {
+    echo 'Caught exception: ',  $e->getMessage(), "\n";
+}
+echo 'Hello World';
+
 /*
 // GET Collection
 $query_params = ['limit' => 100, 'offset' => 0];
