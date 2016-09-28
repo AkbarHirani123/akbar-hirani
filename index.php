@@ -1,5 +1,5 @@
 <?php
-namespace SendGrid;
+//namespace SendGrid;
 
 require __DIR__ . '/vendor/autoload.php';
 include(dirname(__DIR__) . '/lib/Client.php');
