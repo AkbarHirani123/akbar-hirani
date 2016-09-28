@@ -1,7 +1,6 @@
 <?php
 // If you are using Composer
 require __DIR__ . '/vendor/autoload.php';
-require 'vendor/autoload.php';
 
 $global_headers = array(Authorization: Basic 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);
 $client = SendGrid\Client('base_url', 'global_headers');
