@@ -1,8 +1,8 @@
 <?php
 // If you are using Composer
-//require 'vendor/autoload.php';
+require 'vendor/autoload.php';
 
-/*function helloEmail()
+function helloEmail()
 {
     $from = new Email(null, "test@example.com");
     $subject = "Hello World from the SendGrid PHP Library";
@@ -17,7 +17,7 @@
 
 function sendHelloEmail()
 {
-    $apiKey = getenv('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');
+    $apiKey = getenv('sEvCEJDPS-GXagGqzACgvg');
     $sg = new \SendGrid($apiKey);
     $request_body = helloEmail();
     $response = $sg->client->mail()->send()->post($request_body);
@@ -26,7 +26,7 @@ function sendHelloEmail()
     echo $response->headers();
 }
 
-sendHelloEmail(); */
+sendHelloEmail(); 
 ?>
 <!DOCTYPE html>
 <!--
