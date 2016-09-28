@@ -2,16 +2,9 @@
 namespace SendGrid;
 // If you are using Composer
 require __DIR__ . '/vendor/autoload.php';
+
+print "Key=" . SENDGRID_API_KEY;
 /*
-spl_autoload_register(function ($class) {
-    $file = __DIR__ . '/vendor/' . strtr($class, '\\', '/') . '.php';
-    if (file_exists($file)) {
-        require $file;
-
-        return true;
-    }
-});
-
 try{
     $request_body = json_decode('{
       "personalizations": [
