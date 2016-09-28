@@ -2,7 +2,7 @@
 // If you are using Composer
 require __DIR__ . '/vendor/autoload.php';
 //include(dirname(__DIR__) . '/lib/Client.php');
-$apiKey = getenv('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');
+/*$apiKey = getenv('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');
 $headers = ['Authorization: Bearer ' . $apiKey];
 //$global_headers = array(Authorization: Bearer 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);
 $client = SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
@@ -15,7 +15,7 @@ echo $response->statusCode();
 echo $response->body();
 echo $response->headers();
 
-/*$response = $client->your()->api()->_($param)->call()->get();
+$response = $client->your()->api()->_($param)->call()->get();
 print $response->statusCode();
 print $response->headers();
 print $response->body();
