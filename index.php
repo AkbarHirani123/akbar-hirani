@@ -6,7 +6,7 @@ include(dirname(__DIR__) . '/lib/Client.php');
 // This gets the parent directory, for your current directory use getcwd()
 $path_to_config = dirname(__DIR__);
 
-$api_key = getenv('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');
+$api_key = getenv('sEvCEJDPS-GXagGqzACgvg');
 $headers = array(
     'Content-Type: application/json',
     'Authorization: Bearer '.$api_key
