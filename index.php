@@ -7,13 +7,9 @@ include(dirname(__DIR__) . '/lib/Client.php');
 $path_to_config = dirname(__DIR__);
 
 $api_key = getenv('sEvCEJDPS-GXagGqzACgvg');
+
 $headers = array(
-    'Content-Type: application/json',
-    'Authorization: Bearer '.$api_key
-);
-$headers = array(
-    'Content-Type: application/json',
-    'Authorization: Bearer '.$api_key
+    ''.$api_key
 );
 $client = new SendGrid\Client('https://api.sendgrid.comv3/api_keys/', $headers);
 
