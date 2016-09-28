@@ -2,14 +2,14 @@
 // If you are using Composer
 require __DIR__ . '/vendor/autoload.php';
 
-$global_headers = array(Authorization: Basic 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);
+/*$global_headers = array(Authorization: Basic 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);
 $client = SendGrid\Client('base_url', 'global_headers');
 $response = $client->your()->api()->_($param)->call()->get();
 print $response->statusCode();
 print $response->headers();
 print $response->body();
 
-/*function helloEmail()
+function helloEmail()
 {
     $from = new Email(null, "test@example.com");
     $subject = "Hello World from the SendGrid PHP Library";
