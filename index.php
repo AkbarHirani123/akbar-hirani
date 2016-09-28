@@ -1,6 +1,7 @@
 <?php
+namespace SendGrid;
 // If you are using Composer
-require 'vendor/autoload.php';
+require __DIR__ . '<PATH_TO>/vendor/autoload.php';
 
 try{
     $apiKey = getenv('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');
