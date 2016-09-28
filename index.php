@@ -7,7 +7,7 @@ try {
     $headers = ['Authorization: Basic ' . $apiKey];
     //$global_headers = array(Authorization: Bearer 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);
 
-    $client = SendGrid\Client('https://api.sendgrid.com/v3', $headers);
+    $client = SendGrid\Client('https://api.sendgrid.com/v3/api_keys', $headers);
 
     $response = $client->your()->api()->_($param)->call()->get();
     print $response->statusCode();
