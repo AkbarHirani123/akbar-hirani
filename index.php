@@ -8,15 +8,35 @@ $path_to_config = dirname(__DIR__);
 
 $apiKey = getenv('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');
 
-$headers = ['Authorization: Bearer ' . $apiKey];
-$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3', '/scopes');
-// GET Collection
-$query_params = ['limit' => 100, 'offset' => 0];
-$request_headers = ['X-Mock: 200'];
-$response = $client->api_keys()->get(null, $query_params, $request_headers);
-echo $response->statusCode();
-echo $response->body();
-echo $response->headers();
+$url = 'https://api.sendgrid.com/v3/api_keys';
+
+$body = array(
+            "name" => "My API Key",
+            "scopes" => array(
+                "mail.send",
+                "alerts.create",
+                "alerts.read"
+            )
+        );
+$myArray = array(
+                'Content-type'=>'application/json',
+                'Authorization'=> 'Bearer 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'
+            );
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body));
+curl_setopt($ch, CURLOPT_HTTPHEADER, $myArray);
+
+$result = curl_exec($ch);
+echo $result."\n";
+
+$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+$if ($status != 200){
+    die('Error with request: '.$status);
+}
+
+curl_close($ch);
 /*
 $headers = array(
     'Content-Type: application/json',
