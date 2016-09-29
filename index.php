@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+/*require __DIR__ . '/vendor/autoload.php';
 include(dirname(__DIR__) . '/lib/Client.php');
 
 // This gets the parent directory, for your current directory use getcwd()
@@ -21,7 +21,7 @@ $response = $client->api_keys()->get(null, $query_params, $request_headers);
 echo $response->statusCode();
 echo $response->body();
 echo $response->beaders();
-/*// POST
+// POST
 $request_body = array(
         'name' => 'My PHP API Key',
         'scopes' => array(
