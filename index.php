@@ -8,7 +8,14 @@ $path_to_config = dirname(__DIR__);
 
 $apiKey = getenv('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');
 
-$headers = array(
+$global_headers = array('Authorization: Bearer ' . $api_key_id);
+$client = SendGrid\Client('https://api.sendgrid.com/v3/api_keys', $global_headers);
+$response = $client->api_keys()->get();
+print $response->statusCode();
+print $response->headers();
+print $response->body();
+
+/*$headers = array(
     'Content-Type: application/json',
     'Authorization: Bearer ' . $api_key_id
 );
@@ -20,7 +27,7 @@ $request_headers = array('X-Mock: 200');
 $response = $client->api_keys()->get(null, $query_params, $request_headers);
 echo $response->statusCode();
 echo $response->body();
-/*echo $response->headers();
+echo $response->headers();
 // POST
 $request_body = array(
         'name' => 'My PHP API Key',
