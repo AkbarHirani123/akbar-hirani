@@ -10,7 +10,7 @@ $apiKey = getenv('SG.sEvCEJDPS-GXagGqzACgvg.EYzD8w_pO2BJ6wpHbAcuG7wfNJiTQrSvapcE
 
 $headers = array(
     'Content-Type: application/json',
-    'Authorization: Bearer '.$api_key
+    'Authorization: Basic '.$api_key
 );
 $client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3', null);
 
@@ -19,9 +19,9 @@ $query_params = array('limit' => 100, 'offset' => 0);
 $request_headers = array('X-Mock: 200');
 $response = $client->api_keys()->get(null, $query_params, $request_headers);
 echo $response->statusCode();
-echo $response->body();
-echo $response->beaders();
-/*// POST
+/*echo $response->body();
+echo $response->headers();
+// POST
 $request_body = array(
         'name' => 'My PHP API Key',
         'scopes' => array(
