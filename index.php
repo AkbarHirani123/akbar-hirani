@@ -8,7 +8,10 @@ $path_to_config = dirname(__DIR__);
 
 $apiKey = getenv('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');
 
-$global_headers = array('Authorization: Bearer ' . $api_key_id);
+$global_headers = array(
+    'Content-Type: application/json',
+    'Authorization: Bearer ' . $api_key_id
+);
 $client = SendGrid\Client('https://api.sendgrid.com', $global_headers, '/v3');
 
 /*$headers = array(
