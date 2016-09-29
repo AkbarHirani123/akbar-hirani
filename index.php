@@ -1,6 +1,6 @@
 <?php
 
-/*require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 include(dirname(__DIR__) . '/lib/Client.php');
 
 // This gets the parent directory, for your current directory use getcwd()
@@ -13,7 +13,7 @@ $headers = array(
     'Authorization: Bearer '.$api_key
 );
 $client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3', null);
-
+/*
 // GET Collection
 $query_params = array('limit' => 100, 'offset' => 0);
 $request_headers = array('X-Mock: 200');
