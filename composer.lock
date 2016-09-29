@@ -4,34 +4,34 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "67eecbe931af319876151b24f372bcd1",
-    "content-hash": "d7437ba91830ef489d388d0ed385fc07",
+    "hash": "791b1e54aa6af5d857dfac79b992f3f4",
+    "content-hash": "692095ba26827e10d3b98d316b9dde77",
     "packages": [
         {
             "name": "sendgrid/php-http-client",
-            "version": "3.4.0",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/php-http-client.git",
-                "reference": "9ea03457478549eacd191d6476ae78a6b868af57"
+                "reference": "01c3fc4b94df008cfe03ffb467d4c6dbe6dcfb2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/9ea03457478549eacd191d6476ae78a6b868af57",
-                "reference": "9ea03457478549eacd191d6476ae78a6b868af57",
+                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/01c3fc4b94df008cfe03ffb467d4c6dbe6dcfb2c",
+                "reference": "01c3fc4b94df008cfe03ffb467d4c6dbe6dcfb2c",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=5.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.4",
-                "squizlabs/php_codesniffer": "~2.0"
+                "squizlabs/php_codesniffer": "2.*"
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "SendGrid\\": "lib/"
+                "psr-0": {
+                    "SendGrid": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -57,7 +57,53 @@
                 "rest",
                 "sendgrid"
             ],
-            "time": "2016-09-27 16:15:10"
+            "time": "2016-06-11 00:47:24"
+        },
+        {
+            "name": "sendgrid/sendgrid",
+            "version": "5.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sendgrid/sendgrid-php.git",
+                "reference": "fbf43e7851463c49d6d45382151fbd2e90028af3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/fbf43e7851463c49d6d45382151fbd2e90028af3",
+                "reference": "fbf43e7851463c49d6d45382151fbd2e90028af3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6",
+                "sendgrid/php-http-client": "3.1.0"
+            },
+            "replace": {
+                "sendgrid/sendgrid-php": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/SendGrid.php",
+                    "lib/helpers/mail/Mail.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This library allows you to quickly and easily send emails through SendGrid using PHP.",
+            "homepage": "http://github.com/sendgrid/sendgrid-php",
+            "keywords": [
+                "email",
+                "grid",
+                "send",
+                "sendgrid"
+            ],
+            "time": "2016-09-13 17:27:23"
         }
     ],
     "packages-dev": [],
