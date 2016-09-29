@@ -9,7 +9,7 @@ $path_to_config = dirname(__DIR__);
 $apiKey = getenv('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');
 
 $headers = ['Authorization: Bearer ' . $apiKey];
-$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
+$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3', '/scopes');
 // GET Collection
 $query_params = ['limit' => 100, 'offset' => 0];
 $request_headers = ['X-Mock: 200'];
