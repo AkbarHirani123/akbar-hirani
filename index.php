@@ -36,12 +36,12 @@ echo $response->body();
 echo $response->headers();
 $response_body = json_decode($response->responseBody());
 $api_key_id = $response_body->api_key_id;
-*/
+
 // GET Single
 $response = $client->version('/v3')->api_keys()->_($api_key_id)->get();
 echo $response->statusCode();
 echo $response->body();
-echo $response->headers();
+echo $response->headers();*/
 ?> 
 
 <p>Next stuff</p>
