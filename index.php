@@ -9,11 +9,13 @@ $path_to_config = dirname(__DIR__);
 $apiKey = getenv('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');
 
 $global_headers = array('Authorization: Bearer ' . $api_key_id);
-$client = SendGrid\Client('https://api.sendgrid.com/v3/api_keys', $global_headers);
-$response = $client->api_keys()->get();
-print $response->statusCode();
-print $response->headers();
-print $response->body();
+$client = SendGrid\Client('https://api.sendgrid.com', $global_headers, '/v3','/api_keys');
+$query_params = ['limit' => 100, 'offset' => 0];
+$request_headers = ['X-Mock: 200'];
+$response = $client->api_keys()->get(null, $query_params, $request_headers);
+echo $response->statusCode();
+echo $response->body();
+echo $response->headers();
 
 /*$headers = array(
     'Content-Type: application/json',
