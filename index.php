@@ -2,7 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 include(dirname(__DIR__) . '/lib/Client.php');
-
+/*
 // This gets the parent directory, for your current directory use getcwd()
 $path_to_config = dirname(__DIR__);
 
@@ -18,7 +18,7 @@ echo $response->statusCode();
 echo $response->body();
 echo $response->headers();
 
-/*$headers = array(
+$headers = array(
     'Content-Type: application/json',
     'Authorization: Bearer ' . $api_key_id
 );
