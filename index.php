@@ -6,37 +6,19 @@ include(dirname(__DIR__) . '/lib/Client.php');
 // This gets the parent directory, for your current directory use getcwd()
 $path_to_config = dirname(__DIR__);
 
+$from = new SendGrid\Email(null, "test@example.com");
+$subject = "Hello World from the SendGrid PHP Library!";
+$to = new SendGrid\Email(null, "test@example.com");
+$content = new SendGrid\Content("text/plain", "Hello, Email!");
+$mail = new SendGrid\Mail($from, $subject, $to, $content);
+
 $apiKey = getenv('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');
+$sg = new \SendGrid($apiKey);
 
-$url = 'https://api.sendgrid.com/v3/api_keys';
-
-$body = array(
-            "name" => "My API Key",
-            "scopes" => array(
-                "mail.send",
-                "alerts.create",
-                "alerts.read"
-            )
-        );
-$myArray = array(
-                'Content-type'=>'application/json',
-                'Authorization'=> 'Bearer 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'
-            );
-
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($body));
-curl_setopt($ch, CURLOPT_HTTPHEADER, $myArray);
-
-$result = curl_exec($ch);
-echo $result."\n";
-
-$status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-$if ($status != 200){
-    die('Error with request: '.$status);
-}
-
-curl_close($ch);
+$response = $sg->client->mail()->send()->post($mail);
+echo $response->statusCode();
+echo $response->headers();
+echo $response->body();
 /*
 $headers = array(
     'Content-Type: application/json',
