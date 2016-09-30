@@ -12,7 +12,10 @@ function myAjax() {
 		url: 'akbar-hirani.herokuapp.com/index.php',
 		data:{action:'call_this'},
 		success:function(html) {
-		 alert(html);
-		}
+        	alert(html+"working2");
+        },
+        error: function(html){
+            alert(html+"wrong2");
+        }
     });
 };

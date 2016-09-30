@@ -229,10 +229,10 @@ and open the template in the editor.
                     url: 'akbar-hirani.herokuapp.com/index.php',
                     data:{action:'call_this'},
                     success:function(html) {
-                     alert(html);
+                     alert(html+"working");
                     },
                     error: function(html){
-                        alert(html);
+                        alert(html+"wrong");
                     }
                 });
             };
