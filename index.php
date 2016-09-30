@@ -17,7 +17,7 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
         <p><strong>Message is: </strong></p>
         <p style='text-indent:50px' >". $messageIs ."</p>");
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
-    $mail->setTemplateId("3d828577-a0f9-4224-8ae7-6b29e04ac58d");
+    //$mail->setTemplateId("3d828577-a0f9-4224-8ae7-6b29e04ac58d");
 
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
@@ -33,12 +33,9 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
 }
 
 if($_POST['action'] == 'call_this') {
-    echo "<script> alert(); </script>";
     $sentFromN = "" .$_POST['contactName'];
     $sentFromE = "" .$_POST['contactEmail'];
     $messageI = "" .$_POST['contactMessage'];
-
-    echo "" . $sentFromN;
     
     sendEmailTo($sentFromN, $sentFromE, $messageI);
 }
