@@ -7,12 +7,14 @@ $(function(){
 });
 
 $(function myAjax() {
-      $.ajax({
-           type: "POST",
-           url: 'akbar-hirani.herokuapp.com/index.php',
-           data:{action:'call_this'},
-           success:function(html) {
-             alert(html);
-           }
-      });
+	alert("ajax call1");
+	$.ajax({
+		alert("ajax call");
+		type: "POST",
+		url: 'akbar-hirani.herokuapp.com/index.php',
+		data:{action:'call_this'},
+		success:function(html) {
+		 alert(html);
+		}
+    });
  });
