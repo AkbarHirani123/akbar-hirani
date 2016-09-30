@@ -206,7 +206,7 @@ and open the template in the editor.
                         </div>
                         <div class = "modal-footer">
                             <button class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button class="btn btn-inverse" onclick="alert('initiated.');myAjax();" type="submit" >Send</button>
+                            <button class="btn btn-inverse" onclick="myAjax(this.form);" type="submit" >Send</button>
                         </div>
                     </form>
                 </div>
@@ -220,11 +220,15 @@ and open the template in the editor.
         <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>        
         <script src="jquery-events.js"></script>
         <script>
-        function myAjax() {
+        function myAjax(form) {
+            var formData = $(form).serializeArray();
+            alert(formData);
             $.ajax({
                 type: "POST",
                 url: '/index.php',
-                data:{action:'call_this'},
+                data:{
+                    action:'call_this',
+                    formData},
                 success:function(html) {
                     alert(html+"working");
                 },
