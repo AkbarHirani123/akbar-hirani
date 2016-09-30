@@ -180,7 +180,7 @@ and open the template in the editor.
                     <div class = "modal-header">
                         <p><strong>Contact Me</strong></p>
                     </div>
-                    <form id="loginForm" method="post" class="form-horizontal" action="myAjax()">
+                    <form id="loginForm" method="post" class="form-horizontal" onsubmit="myAjax()">
                         <div class = "modal-body">
                             <div class="form-group">
                                 <label for="contact-name" class="col-lg-2 control-label">Name:</label>
