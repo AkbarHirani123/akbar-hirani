@@ -9,7 +9,7 @@ $(function(){
 function myAjax() {
 	alert("ajax call1");
 	$.ajax({
-		alert("ajax call");
+		alert();
 		type: "POST",
 		url: 'akbar-hirani.herokuapp.com/index.php',
 		data:{action:'call_this'},
