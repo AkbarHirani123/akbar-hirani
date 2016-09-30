@@ -32,7 +32,7 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
     echo $response->body();
 }
 
-if($_POST['action'] === 'call_this') {
+if(!is_null($_POST['contactName'])) {
     $sentFromN = "" .$_POST['contactName'];
     $sentFromE = "" .$_POST['contactEmail'];
     $messageI = "" .$_POST['contactMessage'];
