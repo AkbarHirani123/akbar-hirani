@@ -182,7 +182,7 @@ and open the template in the editor.
                     <div class = "modal-header">
                         <p><strong>Contact Me</strong></p>
                     </div>
-                    <form id="loginForm" method="post" class="form-horizontal" onsubmit="myAjax()">
+                    <form id="loginForm" method="post" class="form-horizontal">
                         <div class = "modal-body">
                             <div class="form-group">
                                 <label for="contact-name" class="col-lg-2 control-label">Name:</label>
@@ -209,7 +209,7 @@ and open the template in the editor.
                         </div>
                         <div class = "modal-footer">
                             <button class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button class="btn btn-inverse" type="submit">Send!</button>
+                            <button class="btn btn-inverse" type="submit" onclick="myAjax()">Send!</button>
                         </div>
                     </form>
                 </div>
