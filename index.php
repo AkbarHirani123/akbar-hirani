@@ -27,20 +27,20 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
 
-    $subject = "Receipt Email For Contacting Akbar Hirani"
-    $to2 = new SendGrid\Email(null, $sentFromEmail);
-    $content2 = new SendGrid\Content("text/html", "<p>Hello ". $sentFromName ."!</p>
+    $subject = "Receipt Email For Contacting Akbar Hirani";
+    $to = new SendGrid\Email(null, $sentFromEmail);
+    /*$content = new SendGrid\Content("text/html", "<p>Hello ". $sentFromName ."!</p>
         <p style='text-indent:50px' >Thank you for contacting me, Akbar Hirani! Your message is very important and I will reach out to you ass soon as I can.</p>
         <p>The message you sent contained the following information:</p> 
         <p><strong>Name: </strong>" . $sentFromName . "</p> 
         <p><strong>Email: </strong><a href=mailto:" . $sentFromEmail .">". $sentFromEmail ."</a></p>
         <p><strong>Message was: </strong></p>
         <p style='text-indent:50px' >". $messageIs ."</p><p>Note: This is an automated message. Please do not reply to this email.</p>");
-    $mail2 = new SendGrid\Mail($from, $subject, $to2, $content2);
-    $mail2->setTemplateId("3d828577-a0f9-4224-8ae7-6b29e04ac58d");
-/*
+    $mail = new SendGrid\Mail($from, $subject, $to2, $content2);
+    $mail->setTemplateId("3d828577-a0f9-4224-8ae7-6b29e04ac58d");
+
     try {
-        $response2 = $sg->client->mail()->send()->post($mail2);
+        $response = $sg->client->mail()->send()->post($mail2);
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
