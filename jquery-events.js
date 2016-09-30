@@ -6,7 +6,7 @@ $(function(){
 	});
 });
 
-$(function myAjax() {
+function myAjax() {
 	alert("ajax call1");
 	$.ajax({
 		alert("ajax call");
@@ -17,4 +17,4 @@ $(function myAjax() {
 		 alert(html);
 		}
     });
- });
+};
