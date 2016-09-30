@@ -26,16 +26,16 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
-    echo '<script>console.log("$response->statusCode()");</script>';
+    /*echo '<script>console.log("$response->statusCode()");</script>';
     echo '<script>console.log("$response->headers()");</script>';
-    echo '<script>console.log("$response->body()");</script>';}
+    echo '<script>console.log("$response->body()");</script>';}*/
 
 }
 
 function sendEmailFrom( $sentFromName, $sentFromEmail, $messageIs ){
     $from = new SendGrid\Email(null, "akbar-hirani-herokuapp@example.com");
     $subject = "Receipt Email For Contacting Akbar Hirani"
-    $to = new SendGrid\Email(null, "" . $sentFromEmail);
+    $to = new SendGrid\Email(null, $sentFromEmail);
     $content = new SendGrid\Content("text/html", "<p>Thank you for reaching out to me, Akbar Hirani! Your message is very important to me. I will reach out to you personally. This is a receipt email from me.</p><p>The message you sent contained the following information:</p> 
         <p><strong>Name: </strong>" . $sentFromName . "</p> 
         <p><strong>Email: </strong><a href=mailto:" . $sentFromEmail .">". $sentFromEmail ."</a></p>
@@ -52,10 +52,10 @@ function sendEmailFrom( $sentFromName, $sentFromEmail, $messageIs ){
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
-    echo '<script>console.log("$response->statusCode()");</script>';
+    /*echo '<script>console.log("$response->statusCode()");</script>';
     echo '<script>console.log("$response->headers()");</script>';
-    echo '<script>console.log("$response->body()");</script>';
-    
+    echo '<script>console.log("$response->body()");</script>';*/
+
 }
 
 if(!is_null($_POST['contactName'])) {
