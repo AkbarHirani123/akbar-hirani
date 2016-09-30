@@ -223,19 +223,20 @@ and open the template in the editor.
         <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>        
         <script src="jquery-events.js"></script>
         <script>
-            function myAjax() {
-                $.ajax({
-                    type: "POST",
-                    url: '/index.php',
-                    data:{action:'call_this'},
-                    success:function(html) {
-                        alert(html+"working");
-                    },
-                    error: function(html){
-                        alert(html+"wrong");
-                    }
-                });
-            };
+        function myAjax() {
+            $.ajax({
+                type: "POST",
+                url: 'akbar-hirani-herokuapp.com/index.php',
+                data:{action:'call_this'},
+                success:function(html) {
+                    alert(html+"working");
+                },
+                error: function(xhr, status, error) {
+                    var err = eval("(" + xhr.responseText + ")");
+                    alert(err.Message);
+                }
+            });
+        };
         </script>
 
         
