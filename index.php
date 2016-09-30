@@ -7,7 +7,6 @@ $path_to_config = dirname(__DIR__);
 
 
 function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
-    echo 'console.log("entered function");';
     $from = new SendGrid\Email(null, "akbar-hirani-herokuapp@example.com");
     $subject = "You have  a Message! From: " . $senFromName;
     $to = new SendGrid\Email(null, "akbar.hirani123@gmail.com");
@@ -17,7 +16,7 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
         <p><strong>Message is: </strong></p>
         <p style='text-indent:50px' >". $messageIs ."</p>");
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
-    //$mail->setTemplateId("3d828577-a0f9-4224-8ae7-6b29e04ac58d");
+    $mail->setTemplateId("3d828577-a0f9-4224-8ae7-6b29e04ac58d");
 
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
@@ -230,10 +229,10 @@ and open the template in the editor.
                     action:'call_this',
                     formData},
                 success:function(html) {
-                    alert(html+"working");
+                    alert("The email was sent!");
                 },
-                error: function(xhr, status, error) {
-                    alert(xhr.responseText);
+                error: function() {
+                    alert("The email was NOT sent!");
                 }
             });
         };
