@@ -32,7 +32,7 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
 
 }
 
-function sendEmailFrom( $sentFromName, $sentFromEmail, $messageIs ){
+/*function sendEmailFrom( $sentFromName, $sentFromEmail, $messageIs ){
     $from = new SendGrid\Email(null, "akbar-hirani-herokuapp@example.com");
     $subject = "Receipt Email For Contacting Akbar Hirani"
     $to = new SendGrid\Email(null, $sentFromEmail);
@@ -56,7 +56,7 @@ function sendEmailFrom( $sentFromName, $sentFromEmail, $messageIs ){
     echo '<script>console.log("$response->headers()");</script>';
     echo '<script>console.log("$response->body()");</script>';*/
 
-}
+}*/
 
 if(!is_null($_POST['contactName'])) {
     $sentFromN = "" .$_POST['contactName'];
