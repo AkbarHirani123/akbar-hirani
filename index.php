@@ -14,7 +14,7 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
         <br><p><strong>Name: </strong>" . $sentFromName . "</p> 
         <p><strong>Email: </strong><a href=mailto:" . $sentFromEmail .">". $sentFromEmail ."</a></p>
         <p><strong>Message is: </strong></p>
-        <p style='text-indent:50px' >". $messageIs ."</p>");
+        <p>". $messageIs ."</p>");
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
     $mail->setTemplateId("3d828577-a0f9-4224-8ae7-6b29e04ac58d");
 
