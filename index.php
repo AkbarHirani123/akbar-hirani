@@ -64,7 +64,7 @@ if(!is_null($_POST['contactName'])) {
     $messageI = "" .$_POST['contactMessage'];
     
     sendEmailTo($sentFromN, $sentFromE, $messageI);
-    sendEmailFrom($sentFromN, $sentFromE, $messageI));
+    //sendEmailFrom($sentFromN, $sentFromE, $messageI));
 }
 
 /*
