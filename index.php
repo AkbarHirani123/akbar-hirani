@@ -30,7 +30,7 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
     $subject = "Receipt Email For Contacting Akbar Hirani";
     $to = new SendGrid\Email(null, $sentFromEmail);
     $content = new SendGrid\Content("text/html", "<p>Hello ". $sentFromName ."!</p>
-        <p style='text-indent:50px' >Thank you for contacting me, Akbar Hirani! Your message is very important and I will reach out to you ass soon as I can.</p>
+        <p>Thank you for contacting me, Akbar Hirani! Your message is very important and I will reach out to you ass soon as I can. In the mean time check out my work <a href='akbar.hirani-herokuapp.com/work.html'> here</a>.</p>
         <p>The message you sent contained the following information:</p> 
         <div style='padding: 25px;' ><p><strong>Name: </strong>" . $sentFromName . "</p> 
         <p><strong>Email: </strong><a href=mailto:" . $sentFromEmail .">". $sentFromEmail ."</a></p>
