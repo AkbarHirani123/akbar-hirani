@@ -7,7 +7,7 @@ $path_to_config = dirname(__DIR__);
 
 
 function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
-    echo "entered function";
+    echo 'entered function';
     $from = new SendGrid\Email(null, "akbar-hirani-herokuapp@example.com");
     $subject = "You have  a Message! From: " . $senFromName;
     $to = new SendGrid\Email(null, "akbar.hirani123@gmail.com");
