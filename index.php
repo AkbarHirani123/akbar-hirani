@@ -31,10 +31,12 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
     echo $response->body();
 }
 
-if(isset($_POST)){
+if($_POST['action'] == 'call_this') {
     $sentFromN = "" .$_POST['contactName'];
     $sentFromE = "" .$_POST['contactEmail'];
     $messageI = "" .$_POST['contactMessage'];
+
+    echo $sentFromN;
     
     sendEmailTo($sentFromN, $sentFromE, $messageI);
 }
@@ -178,7 +180,7 @@ and open the template in the editor.
                     <div class = "modal-header">
                         <p><strong>Contact Me</strong></p>
                     </div>
-                    <form id="loginForm" method="post" class="form-horizontal" action="index.php">
+                    <form id="loginForm" method="post" class="form-horizontal" action="myAjax()">
                         <div class = "modal-body">
                             <div class="form-group">
                                 <label for="contact-name" class="col-lg-2 control-label">Name:</label>
