@@ -16,7 +16,7 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
         <p><strong>Message is: </strong></p>
         <p style='text-indent:50px' >". $messageIs ."</p>");
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
-    $mail->setTemplateId("13b8f94f-bcae-4ec6-b752-70d6cb59f932");
+    $mail->setTemplateId("3d828577-a0f9-4224-8ae7-6b29e04ac58d");
 
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
