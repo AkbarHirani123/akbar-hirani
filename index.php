@@ -38,13 +38,13 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
         <p style='text-indent:50px' >". $messageIs ."</p><p>Note: This is an automated message. Please do not reply to this email.</p>");
     $mail = new SendGrid\Mail($from, $subject, $to2, $content2);
     $mail->setTemplateId("3d828577-a0f9-4224-8ae7-6b29e04ac58d");
-/*
+
     try {
         $response = $sg->client->mail()->send()->post($mail2);
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
-
+/*
     echo '<script>console.log("$response->statusCode()");</script>';
     echo '<script>console.log("$response->headers()");</script>';
     echo '<script>console.log("$response->body()");</script>';}*/
