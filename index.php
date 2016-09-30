@@ -226,7 +226,7 @@ and open the template in the editor.
         function myAjax() {
             $.ajax({
                 type: "POST",
-                url: 'akbar-hirani-herokuapp.com/index.php',
+                url: '/index.php',
                 data:{action:'call_this'},
                 success:function(html) {
                     alert(html+"working");
@@ -244,3 +244,5 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     </body>
 </html>
+
+
