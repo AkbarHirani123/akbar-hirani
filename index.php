@@ -33,7 +33,7 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
 }
 
 if($_POST['action'] == 'call_this') {
-    echo "entered ifstatement";
+    echo "<script> alert(); </script>";
     $sentFromN = "" .$_POST['contactName'];
     $sentFromE = "" .$_POST['contactEmail'];
     $messageI = "" .$_POST['contactMessage'];
@@ -232,8 +232,7 @@ and open the template in the editor.
                     alert(html+"working");
                 },
                 error: function(xhr, status, error) {
-                    var err = eval("(" + xhr.responseText + ")");
-                    alert(err.Message);
+                    alert(xhr.responseText);
                 }
             });
         };
