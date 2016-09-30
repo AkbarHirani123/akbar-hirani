@@ -224,13 +224,15 @@ and open the template in the editor.
         <script src="jquery-events.js"></script>
         <script>
             function myAjax() {
-                console.log("entered");
                 $.ajax({
                     type: "POST",
                     url: 'akbar-hirani.herokuapp.com/index.php',
                     data:{action:'call_this'},
                     success:function(html) {
                      alert(html);
+                    },
+                    error: function(html){
+                        alert(html);
                     }
                 });
             };
