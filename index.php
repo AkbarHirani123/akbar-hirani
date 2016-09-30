@@ -7,6 +7,7 @@ $path_to_config = dirname(__DIR__);
 
 
 function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
+    echo "entered function";
     $from = new SendGrid\Email(null, "akbar-hirani-herokuapp@example.com");
     $subject = "You have  a Message! From: " . $senFromName;
     $to = new SendGrid\Email(null, "akbar.hirani123@gmail.com");
@@ -32,11 +33,12 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
 }
 
 if($_POST['action'] == 'call_this') {
+    echo "entered ifstatement";
     $sentFromN = "" .$_POST['contactName'];
     $sentFromE = "" .$_POST['contactEmail'];
     $messageI = "" .$_POST['contactMessage'];
 
-    echo $sentFromN;
+    echo "" . $sentFromN;
     
     sendEmailTo($sentFromN, $sentFromE, $messageI);
 }
