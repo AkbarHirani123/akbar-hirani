@@ -6,7 +6,7 @@ $(function(){
 	});
 });
 
-function myAjax() {
+$(function myAjax() {
       $.ajax({
            type: "POST",
            url: 'akbar-hirani.herokuapp.com/index.php',
@@ -14,6 +14,5 @@ function myAjax() {
            success:function(html) {
              alert(html);
            }
-
       });
- }
+ });

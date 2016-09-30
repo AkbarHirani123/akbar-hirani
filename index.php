@@ -209,7 +209,7 @@ and open the template in the editor.
                         </div>
                         <div class = "modal-footer">
                             <button class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button class="btn btn-inverse" type="submit" onclick="alert( " initiated."); myAjax()">Send!</button>
+                            <button class="btn btn-inverse" onclick="alert('initiated.');myAjax()" type="submit" >Send</button>
                         </div>
                     </form>
                 </div>
