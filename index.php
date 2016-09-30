@@ -10,17 +10,22 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
     $from = new SendGrid\Email(null, "akbar-hirani-herokuapp@example.com");
     $subject = "You have  a Message! From: " . $senFromName;
     $to = new SendGrid\Email(null, "akbar.hirani123@gmail.com");
-    $content = new SendGrid\Content("text/plain", "This message is from: 
+    $content = new SendGrid\Content("text/html", "This message is from: 
         <br><p><strong>Name: </strong>" . $sentFromName . "</p> 
         <p><strong>Email: </strong><a href=mailto:" . $sentFromEmail .">". $sentFromEmail ."</a></p>
         <p><strong>Message is: </strong></p>
         <p style='text-indent:50px' >". $messageIs ."</p>");
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
+    $mail->setTemplateId("13b8f94f-bcae-4ec6-b752-70d6cb59f932");
 
     $apiKey = getenv('SENDGRID_API_KEY');
     $sg = new \SendGrid($apiKey);
 
-    $response = $sg->client->mail()->send()->post($mail);
+    try {
+        $response = $sg->client->mail()->send()->post($mail);
+    } catch (Exception $e) {
+        echo 'Caught exception: ',  $e->getMessage(), "\n";
+    }
     echo $response->statusCode();
     echo $response->headers();
     echo $response->body();
