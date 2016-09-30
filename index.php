@@ -54,7 +54,8 @@ function sendEmailFrom( $sentFromName, $sentFromEmail, $messageIs ){
     }
     echo '<script>console.log("$response->statusCode()");</script>';
     echo '<script>console.log("$response->headers()");</script>';
-    echo '<script>console.log("$response->body()");</script>';}
+    echo '<script>console.log("$response->body()");</script>';
+    
 }
 
 if(!is_null($_POST['contactName'])) {
