@@ -3,63 +3,35 @@
 require __DIR__ . '/vendor/autoload.php';
 include(dirname(__DIR__) . '/lib/Client.php');
 
-// This gets the parent directory, for your current directory use getcwd()
 $path_to_config = dirname(__DIR__);
 
-$from = new SendGrid\Email(null, "test@example.com");
-$subject = "Hello World from the SendGrid PHP Library!";
-$to = new SendGrid\Email(null, "akbar.hirani123@gmail.com");
-$content = new SendGrid\Content("text/plain", "Hello, Email!");
-$mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-$apiKey = getenv('SENDGRID_API_KEY');
-echo ''.$apiKey;
-$sg = new \SendGrid($apiKey);
+function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
+    $from = new SendGrid\Email(null, "akbar-hirani-herokuapp@example.com");
+    $subject = "You have  a Message! From: " . $senFromName;
+    $to = new SendGrid\Email(null, "akbar.hirani123@gmail.com");
+    $content = new SendGrid\Content("text/plain", "This message is from: 
+        <br><p><strong>Name: </strong>" . $sentFromName . "</p> 
+        <p><strong>Email: </strong><a href=mailto:" . $sentFromEmail .">". $sentFromEmail ."</a></p>
+        <p><strong>Message is: </strong></p>
+        <p style='text-indent:50px' >". $messageIs ."</p>");
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
-$response = $sg->client->mail()->send()->post($mail);
-echo $response->statusCode();
-echo $response->headers();
-echo $response->body();
-/*
-$headers = array(
-    'Content-Type: application/json',
-    'Authorization: Bearer ' . $api_key_id
-);
-$client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3/api_keys', null);
+    $apiKey = getenv('SENDGRID_API_KEY');
+    $sg = new \SendGrid($apiKey);
 
-// GET Collection
-$query_params = array('limit' => 100, 'offset' => 0);
-$request_headers = array('X-Mock: 200');
-$response = $client->api_keys()->get(null, $query_params, $request_headers);
-echo $response->statusCode();
-echo $response->body();
-echo $response->headers();
-// POST
-$request_body = array(
-        'name' => 'My PHP API Key',
-        'scopes' => array(
-            'mail.send',
-            'alerts.create',
-            'alerts.read'
-        )
-);
-$response = $client->api_keys()->post($request_body);
-echo $response->statusCode();
-echo $response->body();
-echo $response->headers();
-$response_body = json_decode($response->responseBody());
-$api_key_id = $response_body->api_key_id;
+    $response = $sg->client->mail()->send()->post($mail);
+    echo $response->statusCode();
+    echo $response->headers();
+    echo $response->body();
+}
 
-// GET Single
-$response = $client->version('/v3')->api_keys()->_($api_key_id)->get();
-echo $response->statusCode();
-echo $response->body();
-echo $response->headers();
-?> 
-
-<p>Next stuff</p>
-
-<?php
+if(isset($_POST)){
+    var sentFromName = "" .$_POST['contactName'],
+        sentFromEmail = "" .$_POST['contactEmail'], 
+        messageIs = "" .$_POST['contactMessage'];
+    sendEmailTo(sentFromName, sentFromEmail, messageIs);
+}
 
 /*
 THIS WORKS!!!!!!!!!!!!!!
@@ -200,12 +172,12 @@ and open the template in the editor.
                     <div class = "modal-header">
                         <p><strong>Contact Me</strong></p>
                     </div>
-                    <form id="loginForm" method="post" class="form-horizontal">
+                    <form id="loginForm" method="post" class="form-horizontal" action="index.php">
                         <div class = "modal-body">
                             <div class="form-group">
                                 <label for="contact-name" class="col-lg-2 control-label">Name:</label>
                                 <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="contactName" placeholder="Enter Full Name" autofocus required>
+                                    <input type="text" class="form-control" name="contactName" placeholder="Enter Full Name" autofocus required>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +185,7 @@ and open the template in the editor.
                             <div class="form-group">
                                 <label for="contact-email" class="col-lg-2 control-label">Email:</label>
                                 <div class="col-lg-10">
-                                    <input type="email" class="form-control" id="contactEmail" placeholder="you@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+                                    <input type="email" class="form-control" name="contactEmail" placeholder="you@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
                                 </div>
                             </div>
                         </div>
@@ -221,7 +193,7 @@ and open the template in the editor.
                             <div class="form-group">
                                 <label for="contact-message" class="col-lg-2 control-label">Message:</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" rows="8" id="contactMessage" placeholder="Enter Message" required></textarea> 
+                                    <textarea class="form-control" rows="8" name="contactMessage" placeholder="Enter Message" required></textarea> 
                                 </div>
                             </div>
                         </div>
