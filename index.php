@@ -27,10 +27,11 @@ function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
 }
 
 if(isset($_POST)){
-    var sentFromName = "" .$_POST['contactName'],
-        sentFromEmail = "" .$_POST['contactEmail'], 
-        messageIs = "" .$_POST['contactMessage'];
-    sendEmailTo(sentFromName, sentFromEmail, messageIs);
+    $sentFromN = "" .$_POST['contactName'];
+    $sentFromE = "" .$_POST['contactEmail'];
+    $messageI = "" .$_POST['contactMessage'];
+    
+    sendEmailTo($sentFromN, $sentFromE, $messageI);
 }
 
 /*
