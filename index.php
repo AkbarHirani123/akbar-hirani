@@ -226,10 +226,10 @@ and open the template in the editor.
             function myAjax() {
                 $.ajax({
                     type: "POST",
-                    url: 'akbar-hirani.herokuapp.com/index.php',
+                    url: '/index.php',
                     data:{action:'call_this'},
                     success:function(html) {
-                     alert(html+"working");
+                        alert(html+"working");
                     },
                     error: function(html){
                         alert(html+"wrong");

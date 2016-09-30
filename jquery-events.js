@@ -5,17 +5,3 @@ $(function(){
 		$('#'+panelId).toggle();
 	});
 });
-
-function myAjax() {
-	$.ajax({
-		type: "POST",
-		url: 'akbar-hirani.herokuapp.com/index.php',
-		data:{action:'call_this'},
-		success:function(html) {
-        	alert(html+"working2");
-        },
-        error: function(html){
-            alert(html+"wrong2");
-        }
-    });
-};
