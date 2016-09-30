@@ -8,7 +8,7 @@ $path_to_config = dirname(__DIR__);
 
 function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
     $from = new SendGrid\Email(null, "akbar-hirani-herokuapp@example.com");
-    $subject = "You have  a Message! From: " . $senFromName;
+    $subject = "You have  a Message! From: " . $sentFromName;
     $to = new SendGrid\Email(null, "akbar.hirani123@gmail.com");
     $content = new SendGrid\Content("text/html", "This message is from: 
         <br><p><strong>Name: </strong>" . $sentFromName . "</p> 
@@ -221,7 +221,6 @@ and open the template in the editor.
         <script>
         function myAjax(form) {
             var formData = $(form).serializeArray();
-            alert(formData);
             $.ajax({
                 type: "POST",
                 url: '/index.php',
