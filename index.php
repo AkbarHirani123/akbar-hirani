@@ -222,6 +222,20 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>        
         <script src="jquery-events.js"></script>
+        <script>
+            function myAjax() {
+                alert("ajax call1");
+                $.ajax({
+                    alert("ajax call");
+                    type: "POST",
+                    url: 'akbar-hirani.herokuapp.com/index.php',
+                    data:{action:'call_this'},
+                    success:function(html) {
+                     alert(html);
+                    }
+                });
+            };
+        </script>
 
         
         <!-- Latest compiled and minified JavaScript -->        
