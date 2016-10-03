@@ -152,7 +152,7 @@ and open the template in the editor.
                                     <ul class="dropdown-menu">
                                         <li><a href="/skills.html">Skills & Tool Set</a></li>
                                         <li role="separator" class="divider"></li>
-                                        <li><a href="/work.html">Work Experience</a></li>
+                                        <li><a href="/work.php">Work Experience</a></li>
                                         <li role="separator" class="divider"></li>
                                         <li><a href="/service.html">Voluntary Experience</a></li>
                                         <li role="separator" class="divider"></li>
@@ -160,7 +160,11 @@ and open the template in the editor.
                                     </ul>
                                 </li>
                             </ul>
-                            
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <button class="btn btn-inverse" data-toggle="modal" data-target="#contactme">Contact Me</button>
+                                </li>
+                            </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
                 </nav>
