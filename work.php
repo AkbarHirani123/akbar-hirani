@@ -5,7 +5,6 @@ include(dirname(__DIR__) . '/lib/Client.php');
 
 $path_to_config = dirname(__DIR__);
 
-
 function sendEmailTo( $sentFromName, $sentFromEmail, $messageIs ){
     $from = new SendGrid\Email(null, "akbar-hirani-herokuapp@example.com");
     $subject = "You have  a Message! From: " . $sentFromName;
@@ -55,5 +54,5 @@ if(!is_null($_POST['contactName'])) {
     sendEmailTo($sentFromN, $sentFromE, $messageI);
 }
 
-include '/work.html';
+include_once("work.html");
 ?>
