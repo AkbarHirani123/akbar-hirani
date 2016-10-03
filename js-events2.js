@@ -19,7 +19,8 @@ function addBox(){
 		for(var i=0; i<arr3.length; i++){
 			if(arr3[i].value == "" || arr3[i].value == null){
 				sortArr();
-				i=arr3.length;
+				alert("Enter a number in the input box first");
+				arr3[i].focus();
 				return;
 			}
 		}
@@ -51,4 +52,5 @@ function sortArr() {
 	}
 
 	sorted.innerHTML=str;
+	arr[arr.length-1].focus();
 }
