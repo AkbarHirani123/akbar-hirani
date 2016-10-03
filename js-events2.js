@@ -17,11 +17,14 @@ function sortArr() {
 	var str = "";
 		arr2 = new Array();
 	for (var i = 0; i < arr.length; i++) {
-		str = arr[i].value.replace (/[A-Za-z$-]/g, "");
-		arr2.push(parseInt(str, 10));
+		str = arr[i].value.replace (/[A-Za-z]/g, "");
+		arr2.push(parseFloat(str));
 
 	}
-	arr2.sort(function(a, b){return a-b});
+	function sortNumber(a,b){
+	   return a - b;
+	}
+	arr2.sort(sortNumber);
 	for (var i = 0; i < arr2.length; i++) {
 		if(!isNaN(arr2[i])){
 			if(i===0){ str="Sorted Array:</br>"+arr2[i]; }
