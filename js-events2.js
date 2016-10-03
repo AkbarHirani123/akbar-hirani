@@ -1,14 +1,35 @@
 var add = document.getElementById("add-box");
+var addBoxes = document.getElementById("add-input-boxes");
 
 add.addEventListener("click", addBox );
 
 function addBox(){
-	var newdiv = document.createElement('div');
-	newdiv.className = "padd"
-	newdiv.innerHTML = "Enter Number: <input type='text' name='myInputs[]'>";
-	document.getElementById("add-input-boxes").appendChild(newdiv);
+	var arr1 = new Array(),
+		arr3 = new Array();
+	if(!addBoxes.hasChildNodes()){
+		var newdiv = document.createElement('div');
+		newdiv.className = "padd"
+		newdiv.innerHTML = "Enter Number: <input type='text' name='myInputs[]'>";
+		addBoxes.appendChild(newdiv);
 
-	sortArr();
+		sortArr();
+	}else {
+		arr1=addBoxes.childNodes;
+		arr3=document.getElementsByName("myInputs[]");
+		for(var i=0; i<arr3.length; i++){
+			if(arr3[i].value == "" || arr3[i].value == null){
+				sortArr();
+				i=arr3.length;
+				return;
+			}
+		}
+		var newdiv = document.createElement('div');
+		newdiv.className = "padd"
+		newdiv.innerHTML = "Enter Number: <input type='text' name='myInputs[]'>";
+		addBoxes.appendChild(newdiv);
+
+		sortArr();
+	}
 }
 
 function sortArr() {
@@ -21,16 +42,11 @@ function sortArr() {
 		arr2.push(parseFloat(str));
 
 	}
-	function sortNumber(a,b){
-	   return a - b;
-	}
-	arr2.sort(sortNumber);
+	str="Sorted Array:";
+	arr2.sort(function (a,b){ return a - b; });
 	for (var i = 0; i < arr2.length; i++) {
 		if(!isNaN(arr2[i])){
-			if(i===0){ str="Sorted Array:</br>"+arr2[i]; }
-			else{
-				str = str+"</br>"+arr2[i];
-			}
+			str = str+"</br>"+arr2[i];
 		}
 	}
 
