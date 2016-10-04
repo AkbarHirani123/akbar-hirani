@@ -54,3 +54,24 @@ function sortArr() {
 	sorted.innerHTML=str;
 	arr[arr.length-1].focus();
 }
+
+function printTime(){
+	var now = new Date();
+	var hours = now.getHours();
+	var mins = now.getMinutes();
+	var seconds = now.getSeconds();
+	var amPm="";
+	if(hours>12) {
+		hours=hours-12;
+		amPm = "PM";
+	}else {
+		amPm="AM";
+	}
+	if (hours<10) hours="0"+hours;
+	if (mins<10) mins="0"+mins;
+	if (seconds<10) seconds="0"+seconds;
+	var time=document.getElementById("time");
+	time.innerHTML= ""+hours+":"+mins+":"+seconds+" "+amPm;
+}
+
+setInterval("printTime()",1000);
