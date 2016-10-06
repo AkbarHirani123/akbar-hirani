@@ -1,3 +1,5 @@
+//event 2 Sorting array
+
 var add = document.getElementById("add-box");
 var addBoxes = document.getElementById("add-input-boxes");
 
@@ -55,6 +57,7 @@ function sortArr() {
 	arr[arr.length-1].focus();
 }
 
+//event 1 print time
 function printTime(){
 	var now = new Date();
 	var hours = now.getHours();
