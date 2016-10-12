@@ -166,3 +166,43 @@ div.jumbotron2 {
 	height: 15px;
 	background: #F00;
 }
+#video-container {
+	width: 640px;
+	height: 360px;
+	position: relative;
+	margin: 10px auto;
+}
+#video-controls {
+	position: absolute;
+	bottom:0;
+	left: 0;
+	right: 0;
+	padding: 5px;
+	opacity:0;
+	-webkit-transition: opacity .3s;
+	background-image: -webkit-linear-gradient(bottom, rgb(111,111,111) 13%, rgb(213,213,213) 100%);
+}
+#video-container:hover #video-controls {
+	opacity: .9;
+}
+.video-button {
+	display:inline-block;
+	background: rgba(0,0,0,.5);
+	border: 0;
+	color: #EEE;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+}
+.video-button:hover {
+	cursor: pointer;
+}
+#seek-bar {
+	display:inline-block;
+	width: 360px;
+}
+#volume-bar {
+	display:inline-block;
+	width: 60px;
+}

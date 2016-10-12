@@ -97,7 +97,7 @@
 
         <div class="jumbotron2"><h3>Video Wraper (using tutorial)</h3></div>
         <div id="big_wrapper" class="center">
-        	<video id="myMovie" height="360" width="640">
+        	<video id="myMovie" width="640" height="360">
         		<source src="assets/videos/star%20wars%20hd.mp4" type="video/mp4">
         	</video>
         	<nav id="movieNav">
@@ -111,6 +111,21 @@
         	</nav>
         </div>
 
+        <div class="jumbotron2"><h3>Video Wraper (using modern skin)</h3></div>
+        <div id="video-container" >
+			<!-- Video -->
+			<video id="video" width="640" height="360">
+        		<source src="assets/videos/star%20wars%20hd.mp4" type="video/mp4">
+        	</video>
+        	<div id="video-controls">
+        	  	<!-- Video Controls -->
+			    <button type="button" class="video-button" id="play-pause">Play</button>
+			    <input type="range" id="seek-bar" value="0">
+			    <button type="button" class="video-button" id="mute">Mute</button>
+			    <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+			    <button type="button" class="video-button" id="full-screen">Full-Screen</button>
+			</div>
+		</div>
 
         <!-- JS scripts-->
         <script src="videoplayer.js"></script>
