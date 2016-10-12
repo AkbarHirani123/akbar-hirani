@@ -12,6 +12,11 @@ li.edit span {
 	display: none;
 }
 
+.noText {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
 li.edit input {
 	display: initial;
 }
