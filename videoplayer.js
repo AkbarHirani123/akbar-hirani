@@ -92,6 +92,9 @@ function another() {
 		var value = (100 / video.duration) * video.currentTime;
 		// Update the slider value
 		seekBar.value = value;
+		if(video.ended){
+			seekBar.value = 0;
+		}
 	});
 
 	// Pause the video when the slider handle is being dragged
@@ -120,7 +123,6 @@ function keyPressHappened(e){
 		    video.webkitRequestFullscreen(); // Chrome and Safari
 		}
 	}
-	console.log(e.which);
 }
 window.addEventListener('load', another, false);
 
