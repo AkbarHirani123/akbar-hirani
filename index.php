@@ -156,7 +156,7 @@ and open the template in the editor.
                                         <li role="separator" class="divider"></li>
                                         <li><a href="/service.html">Voluntary Experience</a></li>
                                         <li role="separator" class="divider"></li>
-                                        <li><a href="/interests.html">Interests</a></li>
+                                        <li><a href="/tocontents.html">Interests</a></li>
                                     </ul>
                                 </li>
                             </ul>
