@@ -94,7 +94,7 @@ function doSecond(){
 function clearIt(e){
 	var xPos = e.clientX;
 	var yPos = e.clientY;
-	ctx.fillRect(e.clientX-310, e.clientY-350, 50, 50);
+	ctx.fillRect(e.clientX-210, e.clientY-310, 50, 50);
 }
 
 window.addEventListener("load", doFirst, false);
