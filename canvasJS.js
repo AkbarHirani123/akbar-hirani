@@ -28,6 +28,7 @@ function doFirst(){
 
 	canvas.shadowColor = "transparent";
 
+	// create circles
 	var startX = 150;
 	var endX = 550;
 	var startY = 250;
@@ -49,6 +50,58 @@ function doFirst(){
 		canvas.stroke();
 	}
 
+	// create stars
+	canvas.strokeStyle="black";
+	cX=startX+r;
+	cY=startY+r;
+	while(cX<endX && cY<endY){
+		star(canvas,cX,cY,r,5,0.5);
+		cX=cX+(r*2);
+	}
+	
+}
+
+function star(ctx, x, y, r, p, m)
+{
+    ctx.save();
+    ctx.beginPath();
+    ctx.translate(x, y);
+    ctx.moveTo(0,0-r);
+    for (var i = 0; i < p; i++)
+    {
+        ctx.rotate(Math.PI / p);
+        ctx.lineTo(0, 0 - (r*m));
+        ctx.rotate(Math.PI / p);
+        ctx.lineTo(0, 0 - r);
+    }
+    ctx.stroke();
+    ctx.restore();
+}
+
+function doSecond(){
+	var x = document.getElementById('canvas2');
+	ctx = x.getContext('2d');
+
+	var pic = new Image();
+	pic.src = "http://nycdwellers.com/info-files/New_York_City_at_Night.jpg";
+	pic.addEventListener("load", function(){
+		ctx.drawImage(pic, 0,0,x.width,x.height);
+	},false);
+
+	window.addEventListener("mousemove", clearIt, false);
+}
+
+function clearIt(e){
+	var xPos = e.clientX;
+	var yPos = e.clientY;
+	ctx.fillRect(e.clientX-310, e.clientY-350, 50, 50);
 }
 
 window.addEventListener("load", doFirst, false);
+window.addEventListener("load", doSecond, false);
+
+
+
+
+
+
