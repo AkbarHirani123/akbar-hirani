@@ -1,0 +1,62 @@
+
+body {
+	font-family: "helvetica neue";
+	color: #666;
+}
+
+li input{
+	display: none;
+}
+
+li.edit input {
+	display: initial;
+}
+
+li.edit span {
+	display: none;
+}
+
+
+p.fancy {
+	background-color: #ECECEC;
+}
+
+div.center {
+	text-align: center;
+}
+
+.hide {
+	display: none;
+	position: absolute;
+}
+
+.special {
+	position: absolute;
+}
+
+a.none,
+a.none:hover {
+	color: #333;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.indent {
+	padding: 0 5%;
+}
+
+h1.h123 {
+	font-size: 50px;
+}
+
+div.jumbotron2 {
+	padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
+    display: block;
+    text-align: center;
+
+}
