@@ -40,50 +40,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-		<header class="navbar-inverse">
-			<div class="container">
-				<nav rol="navigation">
-					<div class="container-fluid">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>
-							<a class="navbar-brand" href="/">Akbar Hirani</a>
-						</div>
-
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-							<ul class="nav navbar-nav">
-                           		<li><a href="/">Home<span class="sr-only">(current)</span></a></li>
-								<li><a target="_blank" href="https://github.com/AkbarHirani123/">GitHub</a></li>
-								<li><a target="_blank" href="https://www.linkedin.com/in/akbarhirani123/">LinkedIn</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-                                        <li><a href="/skills.html">Skills & Tool Set</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="/work.html">Work Experience</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="/service.html">Voluntary Experience</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="/tocontents.html">Interests</a></li>
-                                	</ul>
-								</li>
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-                                <li>
-                                	<button class="btn btn-inverse" data-toggle="modal" data-target="#contactme">Contact Me</button>
-                                </li>
-                            </ul>
-						</div><!-- /.navbar-collapse -->
-					</div><!-- /.container-fluid -->
-				</nav>
-			</div>
-		</header>
+		<div id="includeHeader"></div>
 		
 		<div class="container">
 			<h2 class="centered mb">Work Expereince</h2>
@@ -202,6 +159,11 @@
             });
         };
         </script>
+        <script> 
+            $(function(){
+              $("#includeHeader").load("header.html"); 
+            });
+        </script> 
 
         
         <!-- Latest compiled and minified JavaScript -->        
