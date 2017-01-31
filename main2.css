@@ -8,25 +8,10 @@ li input{
 	display: none;
 }
 
-<<<<<<< HEAD
-li.edit input {
-	display: initial;
-}
-
-=======
->>>>>>> 9a863d9c2452d69c4b66ce3fd21b88d83f93f2a3
 li.edit span {
 	display: none;
 }
 
-<<<<<<< HEAD
-
-p.fancy {
-	background-color: #ECECEC;
-}
-
-div.center {
-=======
 .noText {
 	list-style-type: none;
 	padding: 0px;
@@ -40,7 +25,6 @@ li.edit input {
 }
 
 .center {
->>>>>>> 9a863d9c2452d69c4b66ce3fd21b88d83f93f2a3
 	text-align: center;
 }
 
@@ -49,13 +33,10 @@ li.edit input {
 	position: absolute;
 }
 
-<<<<<<< HEAD
-=======
 .border {
 	border: 1px solid black;
 }
 
->>>>>>> 9a863d9c2452d69c4b66ce3fd21b88d83f93f2a3
 .special {
 	position: absolute;
 }
@@ -85,8 +66,6 @@ div.jumbotron2 {
     display: block;
     text-align: center;
 
-<<<<<<< HEAD
-=======
 }
 
 .padd {
@@ -265,5 +244,4 @@ video {
 	height:250px;
 	margin:5px;
 	border: 3px solid;
->>>>>>> 9a863d9c2452d69c4b66ce3fd21b88d83f93f2a3
 }
