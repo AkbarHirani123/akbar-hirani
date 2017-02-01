@@ -54,7 +54,7 @@ require __DIR__ . '/vendor/autoload.php';
 include(dirname(__DIR__) . '/lib/Client.php');
 // This gets the parent directory, for your current directory use getcwd()
 $path_to_config = dirname(__DIR__);
-$apiKey = getenv('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');
+$apiKey = getenv(key here);
 $headers = ['Authorization: Bearer ' . $apiKey];
 $client = new SendGrid\Client('https://api.sendgrid.com', $headers, '/v3');
 $query_params = ['limit' => 100, 'offset' => 0];
