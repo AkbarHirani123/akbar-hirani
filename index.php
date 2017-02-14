@@ -68,7 +68,8 @@ echo $response->headers();
 # the return value is a string that will work with pg_connect
 function pg_connection_string() {
   // we will fill this out next
-	return "dbname=d26v4jnhakptqh host=ec2-23-21-169-238.compute-1.amazonaws.com port=5432 user=vspzceexuwsiiz password=460fc588daecb641e53f7f2655e426407dc219dfc1d4f7481ea0f74db428beee sslmode=require";
+	extract(parse_url($_ENV["DATABASE_URL"]));
+  	return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
 }
  
 # Establish db connection
