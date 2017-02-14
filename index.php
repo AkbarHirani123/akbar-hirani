@@ -64,6 +64,30 @@ echo $response->statusCode();
 echo $response->body();
 echo $response->headers();
 */
+# This function reads your DATABASE_URL configuration automatically set by Heroku
+# the return value is a string that will work with pg_connect
+function pg_connection_string() {
+  // we will fill this out next
+	return "dbname=d26v4jnhakptqh host=ec2-23-21-169-238.compute-1.amazonaws.com port=5432 user=vspzceexuwsiiz password=460fc588daecb641e53f7f2655e426407dc219dfc1d4f7481ea0f74db428beee sslmode=require";
+}
+ 
+# Establish db connection
+$db = pg_connect(pg_connection_string());
+if (!$db) {
+    echo "Database connection error."
+    exit;
+}
+ 
+# Now let's use the connection for something silly just to prove it works:
+$result = pg_query($pg_conn, "SELECT relname FROM pg_stat_user_tables WHERE schemaname='public'");
+print "<pre>\n";
+if (!pg_num_rows($result)) {
+  print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
+} else {
+  print "Tables in your database:\n";
+  while ($row = pg_fetch_row($result)) { print("- $row[0]\n"); }
+}
+print "\n";
 ?>
 <!DOCTYPE html>
 <!--
