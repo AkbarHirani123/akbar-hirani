@@ -61,7 +61,7 @@ a:focus {
 }
 
 #sep {
-  background: url(assets/imgs/sep.jpg) no-repeat center top;
+  background: url(../assets/imgs/sep.jpg) no-repeat center top;
   padding-top: 100px;
   background-attachment: relative;
   background-position: center 65%;
