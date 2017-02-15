@@ -39,10 +39,16 @@
         
     </head>
     
-    <body style="background-color:{{changeColor}}">
+    <body>
         <div id="includeHeader"></div>
+        
+        <script> 
+            $(function(){
+              $("#includeHeader").load("../header.html"); 
+            });
+        </script> 
 
-        <div class="indent">
+        <div class="indent" style="background-color:{{changeColor}}">
             <div class="jumbotron2">
                 <h1 class="h123">Angular Cool events:</h1>
             </div>
@@ -62,11 +68,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script src="../js/jquery-events.js"></script>
 
-        <script> 
-            $(function(){
-              $("#includeHeader").load("../header.html"); 
-            });
-        </script> 
         
         <!-- Latest compiled and minified JavaScript -->        
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
