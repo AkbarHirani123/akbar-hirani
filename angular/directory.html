@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="directoryApp ">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         
@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/main2.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="angularJS/directory.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
         <!-- Optional theme -->
@@ -39,20 +40,12 @@
         
     </head>
     
-    <body>
+    <body ng-controller="directoryController">
         <div id="includeHeader"></div>
 
-        <div class="indent" style="background-color:{{changeColor}}">
+        <div class="indent">
             <div class="jumbotron2">
-                <h2 class="h123">Angular Cool events:</h2>
-            </div>
-            <h3>Angular Event 1: Change backgroud color</h3>
-            <input type="text" ng-model="changeColor" placeholder="Enter a color">
-            <h4>Color:{{changeColor}}</h4>
-        </div>
-        <div class="indent" ng-init="list = [{name:'Akbar', age: 24},{name:'Joe', age: 25},{name:'Jacky', age: 23},{name:'Bell', age: 21}]" height="500">
-            <div class="jumbotron2">
-                <h2 class="h123">Angular: Filtering and ng-repeat without controllers</h2>
+                <h2 class="h123">Angular App: Directory</h2>
             </div>
             <input type="text" ng-model="search">
             <ul>
@@ -63,11 +56,8 @@
         </div>
 
 
-
-
-
         <div class="center padd">
-            <a class="btn btn-default" href="/directory.html" >Next Page (More Javascript)</a>
+            <a class="btn btn-default" href="/interests/interests2.html" >Next Page (More Javascript)</a>
         </div>
 
         <!-- JS scripts-->
