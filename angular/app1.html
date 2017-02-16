@@ -50,6 +50,21 @@
             <input type="text" ng-model="changeColor" placeholder="Enter a color">
             <h3>Color:{{changeColor}}</h3>
         </div>
+        <div class="indent" ng-init="list = [{name:'Akbar', age: 24},{name:'Joe', age: 25},{name:'Jacky', age: 23},{name:'Bell', age: 21}]">
+            <div class="jumbotron2">
+                <h1 class="h123">Angular: Filtering and ng-repeat without controllers</h1>
+            </div>
+            <input type="text" ng-model="search">
+            <ul>
+                <li ng-repeat="item in list | filter:search">
+                    {{item.name}} - <strong>{{item.age}}</strong>
+                </li>
+            </ul>
+        </div>
+
+
+
+
 
         <div class="center padd">
             <a class="btn btn-default" href="/interests/interests2.html" >Next Page (More Javascript)</a>
