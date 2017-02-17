@@ -44,7 +44,7 @@
     <body ng-controller="directoryController">
         <div id="includeHeader"></div>
 
-        <div class="indent">
+        <div class="indent" style="min-height: 300px;">
             <div class="jumbotron2">
                 <h2 class="h123">Angular App: Directory</h2>
             </div>
@@ -54,6 +54,11 @@
                     {{item.name}} - <strong>{{item.age}}</strong>
                 </li>
             </ul>
+            <form ng-submit="addPerson()">
+                <input type="text" placeholder="Enter Name" ng-model="name">
+                <input type="number" placeholder="Enter Age" ng-model="age">
+                <input type="submit" value="submit">
+            </form>
         </div>
 
 
