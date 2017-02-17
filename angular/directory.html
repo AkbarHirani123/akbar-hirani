@@ -49,9 +49,14 @@
             <div class="jumbotron2">
                 <h2 class="h123">Angular App: Directory</h2>
             </div>
-            <input type="text" ng-model="search">
+            <input type="text" ng-model="search" placeholder="Filter By Keyword">
+            <input type="number" ng-model="limitTo" placeholder="Limit Number of Items">
+            <input type="checkbox" ng-model="dirList.checkAge">Sort by Age
+            <input type="checkbox" ng-model="dirList.checkName">Sort by Name
             <ul>
-                <li ng-repeat="item in dirList.list | filter:search">
+                <li ng-repeat="item in dirList.list | filter:search 
+                    | limitTo:{{limitTo}} 
+                    | orderBy: {{dirList.order}}">
                     {{item.name}} - <strong>{{item.age}}</strong>
                 </li>
             </ul>
