@@ -12,7 +12,11 @@ angular.module('directoryApp', [])
 			dirList.list.push({name: dirList.name, age: dirList.age});
 			dirList.name='';
 			dirList.age=null;
+			dirList.limit = dirList.list.length;
 		};
+
+		dirList.limit = dirList.list.length;
+
 		/*if(checkAge && checkName) {
 			dirList.order = [
 				{'dirList.name'},
