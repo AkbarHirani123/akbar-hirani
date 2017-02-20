@@ -2,10 +2,10 @@ angular.module('directoryApp', [])
 	.controller('directoryController', function() {
 		var dirList = this;
 		dirList.list = [
-			{name:'Akbar', age: 24},
-			{name:'Joe', age: 25},
-			{name:'Jacky', age: 23},
-			{name:'Bell', age: 21}
+			{name:'Akbar', age: 24, img: '../assets/imgs/1.jpg'},
+			{name:'Joe', age: 25, img: '../assets/imgs/2.jpg'},
+			{name:'Jacky', age: 23, img: '../assets/imgs/3.jpg'},
+			{name:'Bell', age: 21, img: '../assets/imgs/4.jpg'}
 		];
 
 		dirList.addPerson = function() {
@@ -16,6 +16,8 @@ angular.module('directoryApp', [])
 		};
 
 		dirList.limit = dirList.list.length;
+
+		dirList.toggle = true;
 
 		/*if(checkAge && checkName) {
 			dirList.order = [
