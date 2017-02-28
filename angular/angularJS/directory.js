@@ -1,4 +1,4 @@
-angular.module('directoryApp', [])
+angular.module('directoryApp', ['ngAnimate'])
 	.controller('directoryController', function() {
 		var dirList = this;
 		dirList.list = [
@@ -19,22 +19,6 @@ angular.module('directoryApp', [])
 
 		dirList.toggle = true;
 
-		/*if(checkAge && checkName) {
-			dirList.order = [
-				{'dirList.name'},
-				{'dirList.age'}
-			];
-		}else if(checkName && !checkAge) {
-			dirList.order = [
-				{'dirList.name'}
-			];
-		}else if(!checkName && checkAge) {
-			dirList.order = [
-				{'dirList.age'}
-			];
-		}else {
-			dirList.order = [];
-		}*/
 	/* INCORRECT PRACTICE TO USE SCOPE
 	.controller('directoryController', function($scope) {
 		$scope.list = [

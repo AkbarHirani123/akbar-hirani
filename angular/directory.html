@@ -6,8 +6,10 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="../css/main.css">
         <link rel="stylesheet" href="../css/main2.css">
+        <link rel="stylesheet" href="../css/angularcss.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>        
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.js"></script>
         <script src="angularJS/directory.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -38,28 +40,6 @@
         <!-- ****** faviconit.com favicons ****** -->
         
         <title>Akbar Hirani | Angular App 1</title>
-        <style type="text/css">
-            .over-21 { background-color: #ddd; color: #000; }
-            .under-21 { background-color: #999; color: #fff; }
-            .hidden { display: none; }
-
-            ul { list-style: none; }
-            li { display: flex; margin-bottom: 10px; }
-            li span { display: inline-block; line-height: 50px; }
-            li img { margin-right: 15px;
-                    margin-left: 15px;
-                    border-radius: 50%;
-                    width: 50px;
-                    height: 50px; }
-            #twitter {
-              display: block;
-              height: 30px;
-              margin-left: 20px;
-              margin-top: 10px;
-              margin-bottom: 10px;
-              fill:#3BA9EE;
-            }
-        </style>
     </head>
     
     <!-- <body ng-controller="directoryController"> -->
@@ -75,6 +55,26 @@
             <input type="checkbox" ng-model="checkAge">Sort by Age 
             <input type="checkbox" ng-model="checkName">Sort by Name
             <br/><br/>
+
+            <!--
+            <ul ng-class="{'hidden' : !dirList.toggle}"> -->
+                <!-- <li ng-repeat="item in dirList.list | filter:search 
+                    | limitTo : dirList.limit 
+                    | orderBy: 
+                    ((checkAge && checkName) ? ['name', 'age'] : (checkAge ? ['age'] : (checkName ? ['name'] : ''))) " ng-class="item.age > 21 ? 'over-21' : 'under-21'">
+                    <img ng-src="{{item.img}}" src=""/>
+                    <span>{{item.name}} - <em>{{item.age}}</em></span>
+                    <ng-include src="twitter.html"></ng-include>
+                </li>
+            </ul> -->
+
+            <ul ng-if="dirList.toggle">
+                <li ng-repeat="item in dirList.list | filter:search
+                | limitTo : dirList.limit 
+                    | orderBy: 
+                    ((checkAge && checkName) ? ['name', 'age'] : (checkAge ? ['age'] : (checkName ? ['name'] : '')))" ng-class="item.age>21 ? 'over-21' : 'under-21'" ng-include="'twitter.html'">
+                </li>
+            </ul>
             <button ng-if="!dirList.toggle" ng-click="dirList.toggle = true">Show Names</button>
             <!-- <button ng-show="!dirList.toggle" ng-click="dirList.toggle = true">Show Names</button> -->
             <!-- <button ng-hide="dirList.toggle" ng-click="dirList.toggle = true">Show Names</button> -->
@@ -82,27 +82,26 @@
             <!-- <button ng-show="dirList.toggle" ng-click="dirList.toggle = false">Hide Names</button> -->
             <!-- <button ng-hide="!dirList.toggle" ng-click="dirList.toggle = false">Hide Names</button> -->
             <br/><br/>
-            <ul ng-class="{'hidden' : !dirList.toggle}">
-                <li ng-repeat="item in dirList.list | filter:search 
-                    | limitTo : dirList.limit 
-                    | orderBy: 
-                    ((checkAge && checkName) ? ['name', 'age'] : (checkAge ? ['age'] : (checkName ? ['name'] : ''))) " ng-class="item.age > 21 ? 'over-21' : 'under-21'">
-                    <img ng-src="{{item.img}}" src="">
-                    <span>{{item.name}} - <em>{{item.age}}</em></span>
-                    <ng-include src="'twitter.html'"></ng-include>
-                </li>
-            </ul>
+            
             <form ng-submit="dirList.addPerson()">
                 <input type="text" placeholder="Enter Name" ng-model="dirList.name">
                 <input type="number" placeholder="Enter Age" ng-model="dirList.age">
                 <input type="submit" value="submit">
             </form>
-            <div class="jumbotron2">
+        </div>
+        <div class="jumbotron2">
                 <h4 class="h123">Other angular directive: </h4>
                 1. ng-src: Used to fix '{' error in img src. 
                 <br/>2. ng-include: Helps incude various files like html, svg, etc. Use ''.
+                <br/>
+                <h4 class="h123">Other angular topics coverd in this project: </h4>
+                1. ng-repeat<br/>
+                2. filtering: orderBy, limitTo, ternary operatoers<br/>
+                3. ng-class<br/>
+                4. ng-if vs ng-show vs ng-hide<br/>
+                5. ng-src<br/>
+                5. ngAnimate Module<br/>
             </div>
-        </div>
 
 
         <div class="center padd">

@@ -1,0 +1,70 @@
+.over-21 { 
+  background-color: #ddd; color: #000; 
+}
+.under-21 { 
+  background-color: #999; color: #fff; 
+}
+.hidden { 
+  display: none; 
+}
+
+ul { 
+  list-style: none; 
+}
+li { display: flex; margin-bottom: 10px; }
+li span { display: inline-block; line-height: 50px; }
+li img { 
+  margin-right: 15px;
+  margin-left: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px; 
+}
+#twitter {
+  display: inline-block;
+  height: 30px;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  fill:#3BA9EE;
+}
+li.ng-enter {
+  transition:1s ease all;
+  opacity:0;
+  transform: translateX(-100%);
+/*  transform: translateY(10px);
+*/}
+li.ng-enter.ng-enter-active {
+  opacity:1; 
+  transform: translateX(0%);
+/*  transform: translateY(0);
+*/}
+li.ng-leave {
+  transition:1s ease all;
+  opacity:1;
+  transform: translateX(0%);
+/*  transform: translateY(0);
+*/}
+li.ng-leave.ng-leave-active {
+  opacity:0;
+  transform: translateX(-100%);
+/*  transform: translateY(10px);
+*/}
+
+/* OR YOU CAN DO:
+
+li.ng-enter {
+  animation: fadeIn 0.2s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+OR ng-repeat, view, include, switch, class, if, show/hide
+*/
