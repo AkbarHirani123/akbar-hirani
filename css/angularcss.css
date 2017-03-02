@@ -11,7 +11,7 @@
 ul { 
   list-style: none; 
 }
-li { display: flex; margin-bottom: 10px; }
+.indent li { display: flex; margin-bottom: 10px; }
 li span { display: inline-block; line-height: 50px; }
 li img { 
   margin-right: 15px;
