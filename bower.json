@@ -1,0 +1,18 @@
+{
+  "name": "akbar-hirani",
+  "homepage": "https://github.com/AkbarHirani123/akbar-hirani",
+  "authors": [
+    "Akbar Hirani <akbar.hirani123@gmail.com>"
+  ],
+  "description": "Angular Directory App",
+  "main": "index.php",
+  "license": "None",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

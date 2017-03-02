@@ -1,0 +1,39 @@
+<h4>This tempelate is from Home.html</h4>
+    <input type="text" ng-model="search" placeholder="Filter By Keyword">
+    <input type="number" ng-model="dirList.limit" placeholder="Limit Number of Items">
+    <input type="checkbox" ng-model="checkAge">Sort by Age 
+    <input type="checkbox" ng-model="checkName">Sort by Name
+    <br/><br/>
+
+    <!--
+    <ul ng-class="{'hidden' : !dirList.toggle}"> -->
+        <!-- <li ng-repeat="item in dirList.list | filter:search 
+            | limitTo : dirList.limit 
+            | orderBy: 
+            ((checkAge && checkName) ? ['name', 'age'] : (checkAge ? ['age'] : (checkName ? ['name'] : ''))) " ng-class="item.age > 21 ? 'over-21' : 'under-21'">
+            <img ng-src="{{item.img}}" src=""/>
+            <span>{{item.name}} - <em>{{item.age}}</em></span>
+            <ng-include src="twitter.html"></ng-include>
+        </li>
+    </ul> -->
+
+    <ul ng-if="dirList.toggle">
+        <li ng-repeat="item in dirList.list | filter:search
+        | limitTo : dirList.limit 
+            | orderBy: 
+            ((checkAge && checkName) ? ['name', 'age'] : (checkAge ? ['age'] : (checkName ? ['name'] : '')))" ng-class="item.age>21 ? 'over-21' : 'under-21'" ng-include="'twitter.html'">
+        </li>
+    </ul>
+    <button ng-if="!dirList.toggle" ng-click="dirList.toggle = true">Show Names</button>
+    <!-- <button ng-show="!dirList.toggle" ng-click="dirList.toggle = true">Show Names</button> -->
+    <!-- <button ng-hide="dirList.toggle" ng-click="dirList.toggle = true">Show Names</button> -->
+    <button ng-if="dirList.toggle" ng-click="dirList.toggle = false">Hide Names</button>
+    <!-- <button ng-show="dirList.toggle" ng-click="dirList.toggle = false">Hide Names</button> -->
+    <!-- <button ng-hide="!dirList.toggle" ng-click="dirList.toggle = false">Hide Names</button> -->
+    <br/><br/>
+
+    <form ng-submit="dirList.addPerson()">
+        <input type="text" placeholder="Enter Name" ng-model="dirList.name">
+        <input type="number" placeholder="Enter Age" ng-model="dirList.age">
+        <input type="submit" value="submit">
+    </form>
